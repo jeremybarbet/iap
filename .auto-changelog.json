@@ -1,0 +1,5 @@
+{
+  "ignoreCommitPattern": "^chore: release",
+  "unreleased": false,
+  "commitLimit": false
+}

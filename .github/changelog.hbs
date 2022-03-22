@@ -1,0 +1,17 @@
+# Changelog
+
+{{#each releases}}
+  ## [{{title}}]({{href}})
+
+  {{#commit-list commits heading="### Features" message="feat:\s"}}
+    - {{message}} ({{#if id}}[`#{{id}}`]{{else}}[{{shorthash}}]{{/if}}({{href}}))
+  {{/commit-list}}
+
+  {{#commit-list commits heading="### Improvements" message="chore:\s|refactor:\s" exclude="feat:\s"}}
+    - {{message}} ({{#if id}}[`#{{id}}`]{{else}}[{{shorthash}}]{{/if}}({{href}}))
+  {{/commit-list}}
+
+  {{#commit-list commits heading="### Fixes" message="fix:\s" exclude="feat:\s|chore:\s|refactor:\s"}}
+    - {{message}} ({{#if id}}[`#{{id}}`]{{else}}[{{shorthash}}]{{/if}}({{href}}))
+  {{/commit-list}}
+{{/each}}

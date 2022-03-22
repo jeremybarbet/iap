@@ -1,0 +1,24 @@
+{
+  "name": "@jeremy.barbet/node-iap",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "repository": "git@github.com:jeremybarbet/iap.git",
+  "author": "Jérémy Barbet <jeremgraph@gmail.com>",
+  "scripts": {
+    "build": "tsc",
+    "lint:tsc": "yarn tsc -p . --noEmit --skipLibCheck"
+  },
+  "devDependencies": {
+    "@types/node": "17.0.22",
+    "axios": "0.26.1",
+    "google-auth-library": "7.14.1",
+    "ts-node": "10.7.0",
+    "typescript": "4.6.2"
+  },
+  "peerDependencies": {
+    "axios": "*",
+    "google-auth-library": "*"
+  }
+}

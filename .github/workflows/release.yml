@@ -1,0 +1,39 @@
+name: 'Release'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    if: github.actor == 'jeremybarbet'
+
+    runs-on: ubuntu-latest
+
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - name: Configure Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Set releaser settings
+        run: |
+          git config --global user.name release-bot
+          git config --global user.email release-bot@example.com
+
+      - name: Set .npmrc
+        run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+
+      - name: Release
+        run: yarn release:ci
