@@ -18,13 +18,6 @@ export interface Config {
   privateKey: string;
 }
 
-interface PostBase {
-  /**
-   * Payload to attach to the purchase.
-   */
-  developerPayload: string;
-}
-
 interface BodyBase {
   /**
    * The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
@@ -35,6 +28,13 @@ interface BodyBase {
    * The token provided to the user's device when the subscription was purchased.
    */
   token: string;
+
+  /**
+   * To acknowledge a product/subscription purchase.
+   *
+   * @default: false
+   */
+  acknowledge?: boolean;
 }
 
 export interface SubscriptionReceipt extends BodyBase {
@@ -51,6 +51,4 @@ interface ProductReceipt extends BodyBase {
   productId: string;
 }
 
-export type ReceiptRequestBody = SubscriptionReceipt | ProductReceipt;
-
-export type VerifyReceiptRequestBody = (SubscriptionReceipt & PostBase) | (ProductReceipt & PostBase);
+export type VerifyReceiptRequestBody = SubscriptionReceipt | ProductReceipt;

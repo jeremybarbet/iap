@@ -19,10 +19,11 @@ import { IAPModule } from '@jeremy.barbet/nest-iap';
   imports: [
     IAPModule.forRoot({
       apple: {
-        password: ''
+        password: '',
       },
       google: {
-        privateKey: ''
+        clientEmail: '',
+        privateKey: '',
       },
     }),
   ],
@@ -36,9 +37,21 @@ class MyService {
   constructor(private readonly iapService: IAPService) {}
 
   async someMethod() {
-    const { response } = await this.iapService.verifyReceipt({
-      receipt: 'RECEIPT_ID',
+    const { response } = await this.iapService.verifyAppleReceipt({
+      transactionReceipt: 'BASE_64_RECEIPT',
+    });
+  }
+
+  async someOtherMethod() {
+    const { response } = await this.iapService.verifyGoogleReceipt({
+      packageName: 'PACKAGE_NAME',
+      token: 'TOKEN',
+      productId: 'PRODUCT_ID',
     });
   }
 }
 ```
+
+## License
+
+This library is licensed under the MIT License.

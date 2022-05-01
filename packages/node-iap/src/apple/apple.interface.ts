@@ -7,8 +7,6 @@ import { errors } from './apple.utils';
 
 type ValidReceipt = 0;
 
-export type DeepRecord<T = unknown> = Record<string, T>;
-
 export enum Environnement {
   PRODUCTION = 'production',
   SANDBOX = 'sandbox',
@@ -455,22 +453,22 @@ export interface VerifyReceiptResponse {
   /**
    * An indicator that an error occurred during the request. A value of 1 indicates a temporary issue; retry validation for this receipt at a later time. A value of 0 indicates an unresolvable issue; do not retry validation for this receipt. Only applicable to status codes 21100-21199.
    */
-  'is-retryable': boolean;
+  'is-retryable'?: boolean;
 
   /**
    * The latest Base64 encoded app receipt. Only returned for receipts that contain auto-renewable subscriptions.
    */
-  latest_receipt: string;
+  latest_receipt?: string;
 
   /**
    * An array that contains all in-app purchase transactions. This excludes transactions for consumable products that have been marked as finished by your app. Only returned for receipts that contain auto-renewable subscriptions.
    */
-  latest_receipt_info: LatestReceiptInfo[];
+  latest_receipt_info?: LatestReceiptInfo[];
 
   /**
    * In the JSON file, an array where each element contains the pending renewal information for each auto-renewable subscription identified by the product_id. Only returned for app receipts that contain auto-renewable subscriptions.
    */
-  pending_renewal_info: PendingRenewalInfo[];
+  pending_renewal_info?: PendingRenewalInfo[];
 
   /**
    * A JSON representation of the receipt that was sent for verification.

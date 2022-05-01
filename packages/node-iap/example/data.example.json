@@ -1,0 +1,21 @@
+{
+  "apple": {
+    "credentials": {
+      "password": ""
+    },
+    "payload": {
+      "transactionReceipt": ""
+    }
+  },
+  "google": {
+    "credentials": {
+      "clientEmail": "",
+      "privateKey": ""
+    },
+    "payload": {
+      "packageNameAndroid": "",
+      "productId": "",
+      "purchaseToken": ""
+    }
+  }
+}

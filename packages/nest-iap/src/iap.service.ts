@@ -2,8 +2,6 @@ import {
   AppleConfig,
   AppleRequestBody,
   GoogleConfig,
-  googleReceipt,
-  GoogleReceiptRequestBody,
   GoogleVerifyReceiptRequestBody,
   verifyAppleReceipt,
   verifyGoogleReceipt,
@@ -29,14 +27,6 @@ export class IAPService {
     }
 
     return await verifyAppleReceipt(requestBody, this.config.apple);
-  }
-
-  async googleReceipt(requestBody: GoogleReceiptRequestBody) {
-    if (!this.config?.google) {
-      throw new Error('Missing Google configuration.');
-    }
-
-    return await googleReceipt(requestBody, this.config.google);
   }
 
   async verifyGoogleReceipt(requestBody: GoogleVerifyReceiptRequestBody) {

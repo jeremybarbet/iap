@@ -3,3 +3,4 @@ yarn-error.log
 .vscode
 *.tsbuildinfo
 dist
+packages/node-iap/example/data.json

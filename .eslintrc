@@ -15,11 +15,8 @@
     "jest": true
   },
   "rules": {
-    // TODO: delete rules below
     "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-call": "off",
-    "@typescript-eslint/no-unsafe-return": "off",
-    // TODO
+    "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/interface-name-prefix": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",

@@ -4,7 +4,7 @@ import { IAP_CONFIG, IAPConfig, IAPService } from './iap.service';
 
 @Module({})
 export class IAPModule {
-  static register(config: IAPConfig): DynamicModule {
+  static forRoot(config: IAPConfig): DynamicModule {
     return {
       module: IAPModule,
       providers: [
