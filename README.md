@@ -8,11 +8,94 @@ This is the core library wrapping the Apple and Google IAP APIs to get and verif
 
 View the [README.md](./packages/node-iap/README.md) to get started.
 
+### Installation
+
+```bash
+yarn add @jeremy.barbet/node-iap -E
+```
+
+### Usage
+
+```ts
+import { verifyAppleReceipt, verifyGoogleReceipt } from '@jeremy.barbet/node-iap';
+
+const { data } = verifyAppleReceipt(
+  {
+    transactionReceipt: 'BASE_64_RECEIPT',
+  },
+  {
+    password: 'APPLE_PASSWORD',
+  },
+);
+
+const { data } = verifyGoogleReceipt(
+  {
+    packageName: 'PACKAGE_NAME',
+    token: 'TOKEN',
+    productId: 'PRODUCT_ID',
+  },
+  {
+    clientEmail: 'GOOGLE_CLIENT_EMAIL',
+    privateKey: 'GOOGLE_PRIVATE_KEY',
+  },
+);
+```
+
 ## NestJS IAP wrapper
 
 This is a NestJS wrapper for the Node.js library.
 
 View the [README.md](./packages/nest-iap/README.md) to get started.
+
+### Installation
+
+```bash
+yarn add @jeremy.barbet/nest-iap -E
+```
+
+### Usage
+
+```ts
+import { IAPModule } from '@jeremy.barbet/nest-iap';
+
+@Module({
+  controllers: [...],
+  providers: [...],
+  imports: [
+    IAPModule.forRoot({
+      apple: {
+        password: '',
+      },
+      google: {
+        clientEmail: '',
+        privateKey: '',
+      },
+    }),
+  ],
+})
+```
+
+```ts
+import { IAPService } from '@jeremy.barbet/nest-iap';
+
+class MyService {
+  constructor(private readonly iapService: IAPService) {}
+
+  async someMethod() {
+    const { response } = await this.iapService.verifyAppleReceipt({
+      transactionReceipt: 'BASE_64_RECEIPT',
+    });
+  }
+
+  async someOtherMethod() {
+    const { response } = await this.iapService.verifyGoogleReceipt({
+      packageName: 'PACKAGE_NAME',
+      token: 'TOKEN',
+      productId: 'PRODUCT_ID',
+    });
+  }
+}
+```
 
 ## Acknowledgments
 
