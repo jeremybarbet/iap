@@ -11,7 +11,7 @@
     "lint:tsc": "yarn tsc -p . --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@jeremy.barbet/node-iap": "file:../node-iap"
+    "@jeremy.barbet/node-iap": "0.0.1"
   },
   "devDependencies": {
     "@nestjs/common": "8.4.2",

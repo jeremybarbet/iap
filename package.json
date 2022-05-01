@@ -1,13 +1,11 @@
 {
+  "version": "0.0.1",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "publishConfig": {
     "access": "public"
-  },
-  "release-it": {
-    "npm": false
   },
   "scripts": {
     "lint:tsc": "yarn workspace @jeremy.barbet/nest-iap lint:tsc && yarn workspace @jeremy.barbet/node-iap lint:tsc",
