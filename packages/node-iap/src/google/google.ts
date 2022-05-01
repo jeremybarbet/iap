@@ -1,5 +1,7 @@
 import { JWT } from 'google-auth-library';
 
+import { ErrorResponse } from '../types/common';
+
 import { Config, VerifyReceiptRequestBody } from './google.interface';
 import { isGoogleSubscriptionReceipt } from './google.utils';
 

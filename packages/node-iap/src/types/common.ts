@@ -1,4 +1,4 @@
-interface ErrorResponse {
+export interface ErrorResponse {
   response?: {
     status: number;
   };

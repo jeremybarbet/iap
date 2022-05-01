@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { ErrorResponse } from '../types/common';
+
 import { Config, Environnement, RequestBody, VerifyReceiptResponse } from './apple.interface';
 import { errors, ErrorStatus, handleResponse } from './apple.utils';
 

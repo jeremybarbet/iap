@@ -13,7 +13,7 @@
     "lint:format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
     "lint:format:all": "prettier --write 'packages/**/*.{ts,json,md}'",
     "lint": "yarn lint:format && yarn lint:eslint",
-    "build": "yarn workspace @jeremy.barbet/nest-iap build && yarn workspace @jeremy.barbet/node-iap build",
+    "build": "yarn workspace @jeremy.barbet/node-iap build && yarn workspace @jeremy.barbet/nest-iap build",
     "release": "release-it",
     "release:ci": "release-it --ci",
     "changelog": "auto-changelog --config .auto-changelog.json"
