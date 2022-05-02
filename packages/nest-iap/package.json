@@ -14,11 +14,11 @@
     "@jeremy.barbet/node-iap": "0.0.1"
   },
   "devDependencies": {
-    "@nestjs/common": "8.4.2",
-    "@types/node": "17.0.22",
+    "@nestjs/common": "8.4.4",
+    "@types/node": "17.0.31",
     "reflect-metadata": "0.1.13",
     "rxjs": "7.5.5",
-    "typescript": "4.6.2"
+    "typescript": "4.6.4"
   },
   "peerDependencies": {
     "@nestjs/common": "*"

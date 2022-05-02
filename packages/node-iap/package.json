@@ -11,7 +11,7 @@
     "lint:tsc": "yarn tsc -p . --noEmit --skipLibCheck"
   },
   "devDependencies": {
-    "@types/node": "17.0.30",
+    "@types/node": "17.0.31",
     "axios": "0.27.2",
     "google-auth-library": "8.0.2",
     "ts-node": "10.7.0",
