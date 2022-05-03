@@ -1,17 +1,20 @@
 {
-  "name": "@jeremy.barbet/nest-iap",
+  "name": "@jeremybarbet/nest-iap",
   "version": "0.0.1",
   "license": "MIT",
   "main": "index.ts",
   "types": "index.d.ts",
   "repository": "git@github.com:jeremybarbet/iap.git",
   "author": "Jérémy Barbet <jeremgraph@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "lint:tsc": "yarn tsc -p . --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@jeremy.barbet/node-iap": "0.0.1"
+    "@jeremybarbet/node-iap": "0.0.1"
   },
   "devDependencies": {
     "@nestjs/common": "8.4.4",

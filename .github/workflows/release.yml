@@ -29,11 +29,14 @@ jobs:
 
       - name: Set releaser settings
         run: |
-          git config --global user.name release-bot
-          git config --global user.email release-bot@example.com
+          git config user.name "${GITHUB_ACTOR}"
+          git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
 
       - name: Set .npmrc
-        run: echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
+        run: |
+          echo '//registry.npmjs.org/:_authToken=${NPM_TOKEN}' > .npmrc
 
       - name: Release
         run: yarn release:ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

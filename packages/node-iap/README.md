@@ -1,11 +1,11 @@
-# @jeremy.barbet/node-iap
+# @jeremybarbet/node-iap
 
 Node.js library for Apple and Google IAP.
 
 ## Installation
 
 ```bash
-yarn add @jeremy.barbet/node-iap -E
+yarn add @jeremybarbet/node-iap -E
 ```
 
 ### Google
@@ -21,7 +21,7 @@ Getting a service account up and running is surprisingly really hard. Mostly, be
 ## Usage
 
 ```ts
-import { verifyAppleReceipt, verifyGoogleReceipt } from '@jeremy.barbet/node-iap';
+import { verifyAppleReceipt, verifyGoogleReceipt } from '@jeremybarbet/node-iap';
 
 const { data } = verifyAppleReceipt(
   {

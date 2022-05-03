@@ -5,7 +5,7 @@ import {
   GoogleVerifyReceiptRequestBody,
   verifyAppleReceipt,
   verifyGoogleReceipt,
-} from '@jeremy.barbet/node-iap';
+} from '@jeremybarbet/node-iap';
 import { Inject, Injectable } from '@nestjs/common';
 
 export interface IAPConfig {

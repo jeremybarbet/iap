@@ -1,11 +1,14 @@
 {
-  "name": "@jeremy.barbet/node-iap",
+  "name": "@jeremybarbet/node-iap",
   "version": "0.0.1",
   "license": "MIT",
   "main": "index.ts",
   "types": "index.d.ts",
   "repository": "git@github.com:jeremybarbet/iap.git",
   "author": "Jérémy Barbet <jeremgraph@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsc",
     "lint:tsc": "yarn tsc -p . --noEmit --skipLibCheck"

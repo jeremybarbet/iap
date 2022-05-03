@@ -1,17 +1,17 @@
-# @jeremy.barbet/nest-iap
+# @jeremybarbet/nest-iap
 
 Wrapper around iap library to embed in NestJS applications.
 
 ## Installation
 
 ```bash
-yarn add @jeremy.barbet/nest-iap -E
+yarn add @jeremybarbet/nest-iap -E
 ```
 
 ## Usage
 
 ```ts
-import { IAPModule } from '@jeremy.barbet/nest-iap';
+import { IAPModule } from '@jeremybarbet/nest-iap';
 
 @Module({
   controllers: [...],
@@ -31,7 +31,7 @@ import { IAPModule } from '@jeremy.barbet/nest-iap';
 ```
 
 ```ts
-import { IAPService } from '@jeremy.barbet/nest-iap';
+import { IAPService } from '@jeremybarbet/nest-iap';
 
 class MyService {
   constructor(private readonly iapService: IAPService) {}

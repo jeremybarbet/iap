@@ -11,13 +11,13 @@ View the [README.md](./packages/node-iap/README.md) to get started.
 ### Installation
 
 ```bash
-yarn add @jeremy.barbet/node-iap -E
+yarn add @jeremybarbet/node-iap -E
 ```
 
 ### Usage
 
 ```ts
-import { verifyAppleReceipt, verifyGoogleReceipt } from '@jeremy.barbet/node-iap';
+import { verifyAppleReceipt, verifyGoogleReceipt } from '@jeremybarbet/node-iap';
 
 const { data } = verifyAppleReceipt(
   {
@@ -50,13 +50,13 @@ View the [README.md](./packages/nest-iap/README.md) to get started.
 ### Installation
 
 ```bash
-yarn add @jeremy.barbet/nest-iap -E
+yarn add @jeremybarbet/nest-iap -E
 ```
 
 ### Usage
 
 ```ts
-import { IAPModule } from '@jeremy.barbet/nest-iap';
+import { IAPModule } from '@jeremybarbet/nest-iap';
 
 @Module({
   controllers: [...],
@@ -76,7 +76,7 @@ import { IAPModule } from '@jeremy.barbet/nest-iap';
 ```
 
 ```ts
-import { IAPService } from '@jeremy.barbet/nest-iap';
+import { IAPService } from '@jeremybarbet/nest-iap';
 
 class MyService {
   constructor(private readonly iapService: IAPService) {}
