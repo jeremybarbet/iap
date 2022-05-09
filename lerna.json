@@ -10,7 +10,41 @@
       "message": "chore: release %s"
     },
     "changelogPreset": {
-      "name": "conventionalcommits"
+      "name": "conventionalcommits",
+      "types": [
+        {
+          "type": "feat",
+          "section": "✨ Features"
+        },
+        {
+          "type": "fix",
+          "section": "🐛 Bug fixes"
+        },
+        {
+          "type": "chore",
+          "section": "🛠️ Misc chores"
+        },
+        {
+          "type": "docs",
+          "section": "📚 Documentation"
+        },
+        {
+          "type": "refactor",
+          "section": "🚧 Refactoring"
+        },
+        {
+          "type": "style",
+          "hidden": true
+        },
+        {
+          "type": "perf",
+          "hidden": true
+        },
+        {
+          "type": "test",
+          "hidden": true
+        }
+      ]
     }
   }
 }
