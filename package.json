@@ -1,16 +1,22 @@
 {
+  "name": "iap",
   "version": "0.0.1",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
-    "lint:tsc": "yarn workspace @jeremybarbet/nest-iap lint:tsc && yarn workspace @jeremybarbet/node-iap lint:tsc",
+    "lint:tsc": "lerna run --scope @jeremybarbet/nest-iap lint:tsc && lerna run --scope @jeremybarbet/node-iap lint:tsc",
     "lint:eslint": "eslint --fix '**/*.ts'",
     "lint:format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
     "lint:format:all": "prettier --write 'packages/**/*.{ts,json,md}'",
     "lint": "yarn lint:format && yarn lint:eslint",
-    "build": "yarn workspace @jeremybarbet/node-iap build && yarn workspace @jeremybarbet/nest-iap build"
+    "build": "lerna run --scope @jeremybarbet/node-iap build && lerna run --scope @jeremybarbet/nest-iap build",
+    "release": "lerna publish",
+    "postinstall": "lerna bootstrap"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "5.22.0",
@@ -19,6 +25,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-simple-import-sort": "7.0.0",
+    "lerna": "4.0.0",
     "prettier": "2.6.2",
     "typescript": "4.6.4"
   }

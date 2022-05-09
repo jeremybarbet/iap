@@ -1,0 +1,16 @@
+{
+  "version": "0.0.1",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": [
+    "packages/*"
+  ],
+  "command": {
+    "publish": {
+      "message": "chore: release %s"
+    },
+    "changelogPreset": {
+      "name": "conventionalcommits"
+    }
+  }
+}
