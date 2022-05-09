@@ -11,7 +11,7 @@ View the [README.md](./packages/node-iap/README.md) to get started.
 ### Installation
 
 ```bash
-yarn add @jeremybarbet/node-iap -E
+yarn add @jeremybarbet/node-iap
 ```
 
 ### Usage
@@ -50,7 +50,7 @@ View the [README.md](./packages/nest-iap/README.md) to get started.
 ### Installation
 
 ```bash
-yarn add @jeremybarbet/nest-iap -E
+yarn add @jeremybarbet/nest-iap
 ```
 
 ### Usage
