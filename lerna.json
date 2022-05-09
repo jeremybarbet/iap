@@ -8,8 +8,10 @@
   "command": {
     "version": {
       "exact": true,
+      "conventionalCommits": true,
       "changelogPreset": {
         "name": "conventionalcommits",
+        "header": "Changelog",
         "types": [
           {
             "type": "feat",
@@ -43,7 +45,14 @@
             "type": "test",
             "hidden": true
           }
-        ]
+        ],
+        "issuePrefixes": [
+          "#"
+        ],
+        "issueUrlFormat": "{{host}}/{{owner}}/{{repository}}/issues/{{id}}",
+        "commitUrlFormat": "{{host}}/{{owner}}/{{repository}}/commit/{{hash}}",
+        "compareUrlFormat": "{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}",
+        "userUrlFormat": "{{host}}/{{user}}"
       }
     },
     "publish": {
