@@ -4,3 +4,4 @@ yarn-error.log
 *.tsbuildinfo
 dist
 packages/node-iap/example/data.json
+lerna-debug.log
