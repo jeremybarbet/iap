@@ -44,7 +44,7 @@ export interface SubscriptionReceipt extends BodyBase {
   subscriptionId: string;
 }
 
-interface ProductReceipt extends BodyBase {
+export interface ProductReceipt extends BodyBase {
   /**
    * The inapp product SKU (for example, 'com.some.thing.inapp1').
    */

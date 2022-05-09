@@ -1,7 +1,28 @@
-import { AppleConfig, AppleRequestBody, appleVerify } from './src/apple';
-import { GoogleConfig, googleVerify, GoogleVerifyReceiptRequestBody } from './src/google';
+import {
+  AppleConfig,
+  AppleEnvironnement,
+  AppleRequestBody,
+  appleVerify,
+  AppleVerifyReceiptResponse,
+} from './src/apple';
+import {
+  GoogleConfig,
+  GoogleProductReceipt,
+  GoogleSubscriptionReceipt,
+  googleVerify,
+  GoogleVerifyReceiptRequestBody,
+} from './src/google';
 
-export { type AppleConfig, type AppleRequestBody, type GoogleConfig, type GoogleVerifyReceiptRequestBody };
+export {
+  type AppleConfig,
+  type AppleEnvironnement,
+  type AppleRequestBody,
+  type AppleVerifyReceiptResponse,
+  type GoogleConfig,
+  type GoogleProductReceipt,
+  type GoogleSubscriptionReceipt,
+  type GoogleVerifyReceiptRequestBody,
+};
 
 export const verifyAppleReceipt = async (requestBody: AppleRequestBody, config: AppleConfig) =>
   await appleVerify(requestBody, config);
