@@ -67,7 +67,6 @@ const googleTests = async () => {
     );
 
     responseLog('Google get receipt', response);
-    console.log('\n');
   } catch (error) {
     errorLog('Google get receipt', error);
   }
@@ -87,7 +86,6 @@ const googleTests = async () => {
     );
 
     responseLog('Google verify receipt', response);
-    console.log('\n');
   } catch (error) {
     errorLog('Google verify receipt', error);
   }

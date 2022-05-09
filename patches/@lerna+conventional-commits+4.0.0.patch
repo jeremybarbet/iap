@@ -1,5 +1,5 @@
 diff --git a/node_modules/@lerna/conventional-commits/lib/constants.js b/node_modules/@lerna/conventional-commits/lib/constants.js
-index 30d177d..887e92d 100644
+index 30d177d..1b1e85e 100644
 --- a/node_modules/@lerna/conventional-commits/lib/constants.js
 +++ b/node_modules/@lerna/conventional-commits/lib/constants.js
 @@ -7,12 +7,9 @@ exports.EOL = EOL;
@@ -8,7 +8,7 @@ index 30d177d..887e92d 100644
  
 -exports.COMMIT_GUIDELINE =
 -  "See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.";
-+exports.COMMIT_GUIDELINE = "";
++exports.COMMIT_GUIDELINE = "# Changelog";
  
  exports.CHANGELOG_HEADER = [
 -  "# Change Log",
@@ -18,10 +18,10 @@ index 30d177d..887e92d 100644
 -  exports.COMMIT_GUIDELINE,
  ].join(EOL);
 diff --git a/node_modules/@lerna/conventional-commits/lib/update-changelog.js b/node_modules/@lerna/conventional-commits/lib/update-changelog.js
-index dfe5030..4f3e794 100644
+index dfe5030..feabb76 100644
 --- a/node_modules/@lerna/conventional-commits/lib/update-changelog.js
 +++ b/node_modules/@lerna/conventional-commits/lib/update-changelog.js
-@@ -4,7 +4,7 @@ const conventionalChangelogCore = require("conventional-changelog-core");
+@@ -4,10 +4,11 @@ const conventionalChangelogCore = require("conventional-changelog-core");
  const fs = require("fs-extra");
  const getStream = require("get-stream");
  const log = require("npmlog");
@@ -30,12 +30,36 @@ index dfe5030..4f3e794 100644
  const { getChangelogConfig } = require("./get-changelog-config");
  const { makeBumpOnlyFilter } = require("./make-bump-only-filter");
  const { readExistingChangelog } = require("./read-existing-changelog");
-@@ -68,7 +68,7 @@ function updateChangelog(pkg, type, { changelogPreset, rootPath, tagPrefix = "v"
++const { format, resolveConfig } = require('prettier');
+ 
+ module.exports.updateChangelog = updateChangelog;
+ 
+@@ -68,16 +69,20 @@ function updateChangelog(pkg, type, { changelogPreset, rootPath, tagPrefix = "v"
      ]).then(([newEntry, [changelogFileLoc, changelogContents]]) => {
        log.silly(type, "writing new entry: %j", newEntry);
  
 -      const content = [CHANGELOG_HEADER, newEntry, changelogContents].join(BLANK_LINE);
 +      const content = [CHANGELOG_HEADER, newEntry, changelogContents].join(EOL);
  
-       return fs.writeFile(changelogFileLoc, content.trim() + EOL).then(() => {
-         log.verbose(type, "wrote", changelogFileLoc);
+-      return fs.writeFile(changelogFileLoc, content.trim() + EOL).then(() => {
+-        log.verbose(type, "wrote", changelogFileLoc);
++      return resolveConfig(changelogFileLoc).then((prettierOptions) =>
++        fs
++          .writeFile(changelogFileLoc, format(content.trim() + EOL, { ...prettierOptions, parser: "markdown" }))
++          .then(() => {
++            log.verbose(type, "wrote", changelogFileLoc);
+ 
+-        return {
+-          logPath: changelogFileLoc,
+-          newEntry,
+-        };
+-      });
++            return {
++              logPath: changelogFileLoc,
++              newEntry,
++            };
++          })
++      );
+     });
+   });
+ }
