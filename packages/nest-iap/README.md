@@ -5,7 +5,7 @@ Wrapper around iap library to embed in NestJS applications.
 ## Installation
 
 ```bash
-yarn add @jeremybarbet/nest-iap -E
+yarn add @jeremybarbet/nest-iap
 ```
 
 ## Usage

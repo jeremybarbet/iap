@@ -5,7 +5,7 @@ Node.js library for Apple and Google IAP.
 ## Installation
 
 ```bash
-yarn add @jeremybarbet/node-iap -E
+yarn add @jeremybarbet/node-iap
 ```
 
 ### Google
