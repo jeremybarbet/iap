@@ -14,8 +14,8 @@ import {
 } from './src/google';
 
 export {
+  AppleEnvironnement,
   type AppleConfig,
-  type AppleEnvironnement,
   type AppleRequestBody,
   type AppleVerifyReceiptResponse,
   type GoogleConfig,
