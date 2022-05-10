@@ -1,6 +1,6 @@
 {
   "name": "@jeremybarbet/nest-iap",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "main": "index.ts",
   "types": "index.d.ts",
@@ -14,7 +14,7 @@
     "lint:tsc": "yarn tsc -p . --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@jeremybarbet/node-iap": "1.0.1"
+    "@jeremybarbet/node-iap": "1.0.2"
   },
   "devDependencies": {
     "@nestjs/common": "8.4.4",
