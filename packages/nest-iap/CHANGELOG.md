@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.0.4](https://github.com/jeremybarbet/iap/compare/v1.0.3...v1.0.4) (2022-05-22)
+
+### 🛠️ Misc chores
+
+- cleand and rebuild before publishing ([45f590e](https://github.com/jeremybarbet/iap/commit/45f590ea6690b2bb9425023ba5146bbde2b274f8))
+- improve CI workflows ([2724b26](https://github.com/jeremybarbet/iap/commit/2724b26df6079e9709eef1d4fd579d5bb2d6d1f8))
+
 ### [1.0.3](https://github.com/jeremybarbet/iap/compare/v1.0.2...v1.0.3) (2022-05-22)
 
 ### 📚 Documentation
