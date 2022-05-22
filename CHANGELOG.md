@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.0.6](https://github.com/jeremybarbet/iap/compare/v1.0.5...v1.0.6) (2022-05-22)
+
+### 🐛 Bug fixes
+
+- yep, we need the sources :) ([251e624](https://github.com/jeremybarbet/iap/commit/251e6242be46bb9048ad8b4a35d97a5020a2a037))
+
 ### [1.0.5](https://github.com/jeremybarbet/iap/compare/v1.0.4...v1.0.5) (2022-05-22)
 
 ### 🛠️ Misc chores
