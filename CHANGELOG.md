@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.0.5](https://github.com/jeremybarbet/iap/compare/v1.0.4...v1.0.5) (2022-05-22)
+
+### 🛠️ Misc chores
+
+- ignore tsbuildinfo file ([b79cc94](https://github.com/jeremybarbet/iap/commit/b79cc941c287068f7e20f85de72e1c3855d48f3d))
+
 ### [1.0.4](https://github.com/jeremybarbet/iap/compare/v1.0.3...v1.0.4) (2022-05-22)
 
 ### 🛠️ Misc chores
