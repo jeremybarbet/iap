@@ -16,6 +16,7 @@
     "lint:prettier": "prettier --write \"packages/**/*.{ts,json,md}\"",
     "format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
     "postinstall": "patch-package && lerna bootstrap",
+    "prepare": "yarn build",
     "release": "lerna publish"
   },
   "devDependencies": {
