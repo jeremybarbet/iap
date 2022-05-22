@@ -8,16 +8,18 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
+    "build": "lerna run --scope @jeremybarbet/node-iap build && lerna run --scope @jeremybarbet/nest-iap build",
+    "lint": "yarn lint:tsc && yarn lint:eslint && yarn lint:prettier",
+    "lint:ci": "yarn lint:eslint -f ./node_modules/@firmnav/eslint-github-actions-formatter/dist/formatter.js && yarn lint:prettier",
     "lint:tsc": "lerna run --scope @jeremybarbet/nest-iap lint:tsc && lerna run --scope @jeremybarbet/node-iap lint:tsc",
     "lint:eslint": "eslint --fix '**/*.ts'",
-    "lint:format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
-    "lint:format:all": "prettier --write 'packages/**/*.{ts,json,md}'",
-    "lint": "yarn lint:format:all && yarn lint:eslint",
-    "build": "lerna run --scope @jeremybarbet/node-iap build && lerna run --scope @jeremybarbet/nest-iap build",
-    "release": "lerna publish",
-    "postinstall": "patch-package && lerna bootstrap"
+    "lint:prettier": "prettier --write \"packages/**/*.{ts,json,md}\"",
+    "format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
+    "postinstall": "patch-package && lerna bootstrap",
+    "release": "lerna publish"
   },
   "devDependencies": {
+    "@firmnav/eslint-github-actions-formatter": "1.0.1",
     "@typescript-eslint/eslint-plugin": "5.22.0",
     "@typescript-eslint/parser": "5.22.0",
     "conventional-changelog-conventionalcommits": "4.6.3",

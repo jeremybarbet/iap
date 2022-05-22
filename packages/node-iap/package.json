@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "lint:tsc": "yarn tsc -p . --noEmit --skipLibCheck"
+    "lint:tsc": "yarn tsc -p tsconfig.json --noEmit --skipLibCheck"
   },
   "devDependencies": {
     "@types/node": "17.0.31",

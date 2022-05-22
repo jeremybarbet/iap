@@ -2,6 +2,20 @@
 # yarn lockfile v1
 
 
+"@actions/core@^1.2.0":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@actions/core/-/core-1.8.2.tgz#67539d669ae9b751430469e9ae4d83e0525973ac"
+  integrity sha512-FXcBL7nyik8K5ODeCKlxi+vts7torOkoDAKfeh61EAkAy1HAvwn9uVzZBY0f15YcQTcZZ2/iSGBFHEuioZWfDA==
+  dependencies:
+    "@actions/http-client" "^2.0.1"
+
+"@actions/http-client@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@actions/http-client/-/http-client-2.0.1.tgz#873f4ca98fe32f6839462a6f046332677322f99c"
+  integrity sha512-PIXiMVtz6VvyaRsGY268qvj57hXQEpsYogYOu2nrQhlf+XCGmZstmuZBbAybUl1nQGnvS1k1eEsQ69ZoD7xlSw==
+  dependencies:
+    tunnel "^0.0.6"
+
 "@babel/code-frame@^7.0.0":
   version "7.16.7"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.16.7.tgz#44416b6bd7624b998f5b1af5d470856c40138789"
@@ -49,6 +63,13 @@
     js-yaml "^4.1.0"
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
+
+"@firmnav/eslint-github-actions-formatter@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@firmnav/eslint-github-actions-formatter/-/eslint-github-actions-formatter-1.0.1.tgz#dbedcc4d8a799faf9b709417981039819980aab0"
+  integrity sha512-KbhZwNPFuwoRWspUfoJISOeGZHGSm7tvdOC+uOUlbcY9LNmusRHHmBcq3KaorvW9WmmiOS/2EOo0nafFZ0gpEQ==
+  dependencies:
+    "@actions/core" "^1.2.0"
 
 "@gar/promisify@^1.0.1":
   version "1.1.3"
@@ -4974,6 +4995,11 @@ tunnel-agent@^0.6.0:
   integrity sha1-J6XeoGs2sEoKmWZ3SykIaPD8QP0=
   dependencies:
     safe-buffer "^5.0.1"
+
+tunnel@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/tunnel/-/tunnel-0.0.6.tgz#72f1314b34a5b192db012324df2cc587ca47f92c"
+  integrity sha512-1h/Lnq9yajKY2PEbBadPXj3VxsDDu844OnaAo52UVmIzIvwwtBPIuNvkjuzBlTWpfJyUbG3ez0KSBibQkj4ojg==
 
 tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.5"
