@@ -2,8 +2,8 @@
   "name": "@jeremybarbet/nest-iap",
   "version": "1.0.2",
   "license": "MIT",
-  "main": "index.ts",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:jeremybarbet/iap.git",
   "author": "Jérémy Barbet <jeremgraph@gmail.com>",
   "publishConfig": {

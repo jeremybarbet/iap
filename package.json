@@ -12,7 +12,7 @@
     "lint:eslint": "eslint --fix '**/*.ts'",
     "lint:format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
     "lint:format:all": "prettier --write 'packages/**/*.{ts,json,md}'",
-    "lint": "yarn lint:format && yarn lint:eslint",
+    "lint": "yarn lint:format:all && yarn lint:eslint",
     "build": "lerna run --scope @jeremybarbet/node-iap build && lerna run --scope @jeremybarbet/nest-iap build",
     "release": "lerna publish",
     "postinstall": "patch-package && lerna bootstrap"
