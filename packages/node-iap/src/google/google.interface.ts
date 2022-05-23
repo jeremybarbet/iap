@@ -18,6 +18,40 @@ export interface Config {
   privateKey: string;
 }
 
+interface BodyWithAcknowledge {
+  /**
+   * To acknowledge a product/subscription purchase.
+   *
+   * @default false
+   */
+  acknowledge?: true;
+
+  /**
+   * The acknowledge endpoint return an empty response.
+   * This boolean forces a get request to return purchase's information.
+   *
+   * @default false
+   */
+  fetchResource?: boolean;
+}
+
+interface BodyWithoutAcknowledge {
+  /**
+   * To acknowledge a product/subscription purchase.
+   *
+   * @default false
+   */
+  acknowledge?: false;
+
+  /**
+   * The acknowledge endpoint return an empty response.
+   * This boolean forces a get request to return purchase's information.
+   *
+   * @default false
+   */
+  fetchResource?: never;
+}
+
 interface BodyBase {
   /**
    * The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
@@ -28,14 +62,27 @@ interface BodyBase {
    * The token provided to the user's device when the subscription was purchased.
    */
   token: string;
-
-  /**
-   * To acknowledge a product/subscription purchase.
-   *
-   * @default: false
-   */
-  acknowledge?: boolean;
 }
+
+type BodyConditional = BodyWithAcknowledge | BodyWithoutAcknowledge;
+
+export type SubscriptionReceipt = BodyBase &
+  BodyConditional & {
+    /**
+     * The purchased subscription ID (for example, 'monthly001').
+     */
+    subscriptionId: string;
+  };
+
+export type ProductReceipt = BodyBase &
+  BodyConditional & {
+    /**
+     * The inapp product SKU (for example, 'com.some.thing.inapp1').
+     */
+    productId: string;
+  };
+
+export type VerifyReceiptRequestBody = SubscriptionReceipt | ProductReceipt;
 
 interface IntroductoryPriceInfo {
   /**
@@ -94,22 +141,6 @@ interface SubscriptionPriceChange {
    */
   state: number;
 }
-
-export interface SubscriptionReceipt extends BodyBase {
-  /**
-   * The purchased subscription ID (for example, 'monthly001').
-   */
-  subscriptionId: string;
-}
-
-export interface ProductReceipt extends BodyBase {
-  /**
-   * The inapp product SKU (for example, 'com.some.thing.inapp1').
-   */
-  productId: string;
-}
-
-export type VerifyReceiptRequestBody = SubscriptionReceipt | ProductReceipt;
 
 export interface VerifyGetReceiptResponse {
   /**

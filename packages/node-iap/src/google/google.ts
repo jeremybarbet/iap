@@ -2,35 +2,26 @@ import { JWT } from 'google-auth-library';
 
 import { ErrorResponse, VerifyResponse } from '../types/common';
 
-import { Config, DataResponse, VerifyReceiptRequestBody } from './google.interface';
-import { isGoogleSubscriptionReceipt } from './google.utils';
+import {
+  Config,
+  VerifyAcknowledgeReceiptResponse,
+  VerifyGetReceiptResponse,
+  VerifyReceiptRequestBody,
+} from './google.interface';
+import { buildEndpoint } from './google.utils';
 
-const endpoints = {
-  products: {
-    acknowledge:
-      'https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{packageName}/purchases/products/{productId}/tokens/{token}:acknowledge',
-    get: 'https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{packageName}/purchases/products/{productId}/tokens/{token}',
-  },
+const getResource = async (url: string, client: JWT) => {
+  const { data: resource } = await client.request<VerifyGetReceiptResponse>({
+    method: 'GET',
+    url,
+  });
 
-  subscriptions: {
-    acknowledge:
-      'https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}:acknowledge',
-    get: 'https://androidpublisher.googleapis.com/androidpublisher/v3/applications/{packageName}/purchases/subscriptions/{subscriptionId}/tokens/{token}',
-  },
-};
-
-const buildUrl = (requestBody: VerifyReceiptRequestBody) => {
-  const path = requestBody.acknowledge ? 'acknowledge' : 'get';
-
-  const baseUrl = isGoogleSubscriptionReceipt(requestBody)
-    ? endpoints.subscriptions[path].replace('{subscriptionId}', requestBody.subscriptionId)
-    : endpoints.products[path].replace('{productId}', requestBody.productId);
-
-  return baseUrl.replace('{packageName}', requestBody.packageName).replace('{token}', requestBody.token);
+  return resource;
 };
 
 export const verify = async (requestBody: VerifyReceiptRequestBody, config: Config): Promise<VerifyResponse> => {
-  const { acknowledge = false } = requestBody;
+  // Default to false if undefined
+  requestBody.acknowledge = requestBody?.acknowledge ?? false;
 
   const client = new JWT({
     email: config.clientEmail,
@@ -38,32 +29,42 @@ export const verify = async (requestBody: VerifyReceiptRequestBody, config: Conf
     scopes: ['https://www.googleapis.com/auth/androidpublisher'],
   });
 
-  const url = buildUrl({ ...requestBody, acknowledge });
+  const { acknowledge, get } = buildEndpoint(requestBody);
 
   try {
-    const { data, status } = await client.request<DataResponse>({
-      method: acknowledge ? 'POST' : 'GET',
-      url,
+    const response = await client.request<
+      typeof requestBody['acknowledge'] extends true ? VerifyAcknowledgeReceiptResponse : VerifyGetReceiptResponse
+    >({
+      method: requestBody.acknowledge ? 'POST' : 'GET',
+      url: requestBody.acknowledge ? acknowledge : get,
     });
 
-    if (status === 410) {
-      /**
-       * https://stackoverflow.com/questions/45688494/google-android-publisher-api-responds-with-410-purchasetokennolongervalid-erro
-       */
+    let data: VerifyAcknowledgeReceiptResponse | VerifyGetReceiptResponse = requestBody.acknowledge
+      ? {}
+      : response.data;
+
+    if (requestBody.acknowledge && requestBody.fetchResource) {
+      data = await getResource(get, client);
+    }
+
+    /**
+     * https://stackoverflow.com/questions/45688494/google-android-publisher-api-responds-with-410-purchasetokennolongervalid-erro
+     */
+    if (response.status === 410) {
       return {
         valid: false,
-        data: undefined,
+        data,
         message: 'Receipt no longer valid.',
-        status,
+        status: response.status,
       };
     }
 
-    if (status > 399) {
+    if (response.status > 399) {
       return {
         valid: false,
-        data: undefined,
+        data,
         message: 'An error happened.',
-        status,
+        status: response.status,
       };
     }
 
@@ -71,15 +72,23 @@ export const verify = async (requestBody: VerifyReceiptRequestBody, config: Conf
       valid: true,
       data,
       message: undefined,
-      status,
+      status: response.status,
     };
   } catch (error) {
     const message = error instanceof Error ? error.message : 'An error happened.';
     const status = (error as ErrorResponse)?.response?.status ?? 500;
 
+    let data: VerifyAcknowledgeReceiptResponse | VerifyGetReceiptResponse | undefined = requestBody.acknowledge
+      ? {}
+      : undefined;
+
+    if (requestBody.acknowledge && requestBody.fetchResource) {
+      data = await getResource(get, client);
+    }
+
     return {
       valid: false,
-      data: undefined,
+      data,
       message,
       status,
     };

@@ -37,9 +37,9 @@ const appleTests = async () => {
       },
     );
 
-    responseLog('Apple verify receipt', response);
+    responseLog('verifyAppleReceipt', response);
   } catch (error) {
-    errorLog('Apple verify receipt', error);
+    errorLog('verifyAppleReceipt', error);
   }
 };
 
@@ -67,9 +67,9 @@ const googleTests = async () => {
       },
     );
 
-    responseLog('Google get receipt', response);
+    responseLog('verifyGoogleReceipt: `acknowledge: false``', response);
   } catch (error) {
-    errorLog('Google get receipt', error);
+    errorLog('verifyGoogleReceipt: `acknowledge: false``', error);
   }
 
   try {
@@ -86,15 +86,44 @@ const googleTests = async () => {
       },
     );
 
-    responseLog('Google verify receipt', response);
+    responseLog('verifyGoogleReceipt: `acknowledge: true`', response);
   } catch (error) {
-    errorLog('Google verify receipt', error);
+    errorLog('verifyGoogleReceipt: `acknowledge: true`', error);
+  }
+
+  try {
+    const response = await verifyGoogleReceipt(
+      {
+        packageName: google.payload.packageNameAndroid,
+        token: google.payload.purchaseToken,
+        productId: google.payload.productId,
+        acknowledge: true,
+        fetchResource: true,
+      },
+      {
+        clientEmail: google.credentials.clientEmail,
+        privateKey: google.credentials.privateKey,
+      },
+    );
+
+    responseLog('verifyGoogleReceipt: `acknowledge: true`, `fetchResource: true`', response);
+  } catch (error) {
+    errorLog('verifyGoogleReceipt: `acknowledge: true`, `fetchResource: true`', error);
   }
 };
 
 const main = async () => {
-  await appleTests();
-  await googleTests();
+  try {
+    await appleTests();
+  } catch (error) {
+    console.error(error);
+  }
+
+  try {
+    await googleTests();
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 void main();
