@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.1.0](https://github.com/jeremybarbet/iap/compare/v1.0.6...v1.1.0) (2022-05-23)
+
+**Note:** Version bump only for package @jeremybarbet/nest-iap
+
 ### [1.0.6](https://github.com/jeremybarbet/iap/compare/v1.0.5...v1.0.6) (2022-05-22)
 
 ### 🐛 Bug fixes

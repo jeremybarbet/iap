@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/jeremybarbet/iap/compare/v1.0.6...v1.1.0) (2022-05-23)
+
+### ✨ Features
+
+- allow fetch resource when acknowledging ([08ede49](https://github.com/jeremybarbet/iap/commit/08ede496d856d86afa17926016d299af1a9504fe))
+- better types for Google API response and unify types ([4aa9e59](https://github.com/jeremybarbet/iap/commit/4aa9e5900e74755182c5678c2e782d42b8e2ddb3))
+
 ### [1.0.6](https://github.com/jeremybarbet/iap/compare/v1.0.5...v1.0.6) (2022-05-22)
 
 ### 🐛 Bug fixes
