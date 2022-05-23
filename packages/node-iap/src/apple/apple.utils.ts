@@ -1,6 +1,6 @@
 import { VerifyReceiptResponse } from './apple.interface';
 
-type SuccessStatus = keyof typeof successes;
+export type SuccessStatus = keyof typeof successes;
 export type ErrorStatus = keyof typeof errors;
 
 const inRange = (x: number, min: number, max: number) => (x - min) * (x - max) <= 0;

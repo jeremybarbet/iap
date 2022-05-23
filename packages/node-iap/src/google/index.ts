@@ -1,7 +1,9 @@
 export {
-  VerifyReceiptRequestBody as GoogleVerifyReceiptRequestBody,
-  SubscriptionReceipt as GoogleSubscriptionReceipt,
-  ProductReceipt as GoogleProductReceipt,
-  Config as GoogleConfig,
+  Config,
+  DataResponse,
+  ProductReceipt,
+  StatusResponse,
+  SubscriptionReceipt,
+  VerifyReceiptRequestBody,
 } from './google.interface';
-export { verify as googleVerify } from './google';
+export { verify } from './google';

@@ -3,7 +3,7 @@
  * @link https://developer.apple.com/documentation/appstorereceipts
  */
 
-import { errors } from './apple.utils';
+import { errors, ErrorStatus, SuccessStatus } from './apple.utils';
 
 type ValidReceipt = 0;
 
@@ -503,3 +503,7 @@ export interface Config {
 export interface RequestBody {
   transactionReceipt: string;
 }
+
+export type DataResponse = VerifyReceiptResponse;
+
+export type StatusResponse = SuccessStatus | ErrorStatus | number;

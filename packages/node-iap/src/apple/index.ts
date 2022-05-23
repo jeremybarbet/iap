@@ -1,7 +1,9 @@
 export {
-  VerifyReceiptResponse as AppleVerifyReceiptResponse,
-  RequestBody as AppleRequestBody,
-  Config as AppleConfig,
-  Environnement as AppleEnvironnement,
+  Config,
+  DataResponse,
+  Environnement,
+  RequestBody,
+  StatusResponse,
+  VerifyReceiptResponse,
 } from './apple.interface';
-export { verify as appleVerify } from './apple';
+export { verify } from './apple';

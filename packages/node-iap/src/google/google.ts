@@ -1,8 +1,8 @@
 import { JWT } from 'google-auth-library';
 
-import { ErrorResponse } from '../types/common';
+import { ErrorResponse, VerifyResponse } from '../types/common';
 
-import { Config, VerifyReceiptRequestBody } from './google.interface';
+import { Config, DataResponse, VerifyReceiptRequestBody } from './google.interface';
 import { isGoogleSubscriptionReceipt } from './google.utils';
 
 const endpoints = {
@@ -29,7 +29,7 @@ const buildUrl = (requestBody: VerifyReceiptRequestBody) => {
   return baseUrl.replace('{packageName}', requestBody.packageName).replace('{token}', requestBody.token);
 };
 
-export const verify = async (requestBody: VerifyReceiptRequestBody, config: Config) => {
+export const verify = async (requestBody: VerifyReceiptRequestBody, config: Config): Promise<VerifyResponse> => {
   const { acknowledge = false } = requestBody;
 
   const client = new JWT({
@@ -41,7 +41,7 @@ export const verify = async (requestBody: VerifyReceiptRequestBody, config: Conf
   const url = buildUrl({ ...requestBody, acknowledge });
 
   try {
-    const { data, status } = await client.request({
+    const { data, status } = await client.request<DataResponse>({
       method: acknowledge ? 'POST' : 'GET',
       url,
     });
