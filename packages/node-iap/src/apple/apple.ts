@@ -1,16 +1,17 @@
 import axios from 'axios';
 
-import { ErrorResponse, VerifyResponse } from '../types/common';
+import { ErrorResponse, } from '../types/common';
 
 import { endpoints } from './apple.constants';
-import { Config, Environnement, RequestBody, VerifyReceiptResponse } from './apple.interface';
+import { Environnement, ResponseBody } from './apple.interface';
 import { errors, ErrorStatus, handleResponse } from './apple.utils';
+import { Config, RequestBody, VerifyResponse } from './apple-config.interface';
 
 export const verify = async ({ transactionReceipt }: RequestBody, config: Config): Promise<VerifyResponse> => {
   const { environnement = Environnement.PRODUCTION, password, excludeOldTransactions = true } = config;
 
   try {
-    const { data } = await axios.post<VerifyReceiptResponse>(
+    const { data } = await axios.post<ResponseBody>(
       environnement === Environnement.PRODUCTION ? endpoints.verifyReceipt.production : endpoints.verifyReceipt.sandbox,
       {
         'receipt-data': transactionReceipt,

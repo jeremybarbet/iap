@@ -1,9 +1,15 @@
 export {
   Config,
   DataResponse,
-  ProductReceipt,
   StatusResponse,
-  SubscriptionReceipt,
-  VerifyReceiptRequestBody,
-} from './google.interface';
+  VerifyResponse,
+  RequestBody,
+} from './google-config.interface'
+
+export {
+  SubscriptionPurchase,
+  ProductPurchase,
+  AcknowledgePurchaseOrSubscription,
+} from './google.interface'
+
 export { verify } from './google';

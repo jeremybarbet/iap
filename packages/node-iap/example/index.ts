@@ -1,12 +1,11 @@
-import { verifyAppleReceipt, verifyGoogleReceipt } from '../index';
+import { AppleVerifyResponse, GoogleVerifyResponse, verifyAppleReceipt, verifyGoogleReceipt } from '../index';
 import { Environnement } from '../src/apple/apple.interface';
-import { VerifyResponse } from '../src/types/common';
 
 import { loadDataFile } from './load-data-file';
 
 const { apple, google } = loadDataFile();
 
-const responseLog = (name: string, response: VerifyResponse) => {
+const responseLog = (name: string, response: AppleVerifyResponse | GoogleVerifyResponse) => {
   console.log(name);
   console.log('├ valid: ', response.valid);
   console.log('├ status: ', response.status);

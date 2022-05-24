@@ -1,17 +1,13 @@
 import { JWT } from 'google-auth-library';
 
-import { ErrorResponse, VerifyResponse } from '../types/common';
+import { ErrorResponse } from '../types/common';
 
-import {
-  Config,
-  VerifyAcknowledgeReceiptResponse,
-  VerifyGetReceiptResponse,
-  VerifyReceiptRequestBody,
-} from './google.interface';
+import { AcknowledgePurchaseOrSubscription, ProductPurchase, SubscriptionPurchase } from './google.interface';
 import { buildEndpoint } from './google.utils';
+import { Config, RequestBody, VerifyResponse } from './google-config.interface';
 
-const getResource = async (url: string, client: JWT) => {
-  const { data: resource } = await client.request<VerifyGetReceiptResponse>({
+const getResource = async <T = SubscriptionPurchase | ProductPurchase>(url: string, client: JWT) => {
+  const { data: resource } = await client.request<T>({
     method: 'GET',
     url,
   });
@@ -19,7 +15,7 @@ const getResource = async (url: string, client: JWT) => {
   return resource;
 };
 
-export const verify = async (requestBody: VerifyReceiptRequestBody, config: Config): Promise<VerifyResponse> => {
+export const verify = async (requestBody: RequestBody, config: Config): Promise<VerifyResponse> => {
   // Default to false if undefined
   requestBody.acknowledge = requestBody?.acknowledge ?? false;
 
@@ -33,13 +29,13 @@ export const verify = async (requestBody: VerifyReceiptRequestBody, config: Conf
 
   try {
     const response = await client.request<
-      typeof requestBody['acknowledge'] extends true ? VerifyAcknowledgeReceiptResponse : VerifyGetReceiptResponse
+      typeof requestBody['acknowledge'] extends true ? AcknowledgePurchaseOrSubscription : (SubscriptionPurchase | ProductPurchase)
     >({
       method: requestBody.acknowledge ? 'POST' : 'GET',
       url: requestBody.acknowledge ? acknowledge : get,
     });
 
-    let data: VerifyAcknowledgeReceiptResponse | VerifyGetReceiptResponse = requestBody.acknowledge
+    let data: AcknowledgePurchaseOrSubscription | (SubscriptionPurchase | ProductPurchase) = requestBody.acknowledge
       ? {}
       : response.data;
 
