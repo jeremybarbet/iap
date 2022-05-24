@@ -1,17 +1,13 @@
 import { JWT } from 'google-auth-library';
 
-import { ErrorResponse, VerifyResponse } from '../types/common';
+import { ErrorResponse } from '../types/common';
 
-import {
-  Config,
-  VerifyAcknowledgeReceiptResponse,
-  VerifyGetReceiptResponse,
-  VerifyReceiptRequestBody,
-} from './google.interface';
+import { AcknowledgePurchaseOrSubscription, ProductPurchase, SubscriptionPurchase } from './google.interface';
 import { buildEndpoint } from './google.utils';
+import { Config, RequestBody, VerifyResponse } from './google-config.interface';
 
-const getResource = async (url: string, client: JWT) => {
-  const { data: resource } = await client.request<VerifyGetReceiptResponse>({
+const getResource = async <T = SubscriptionPurchase | ProductPurchase>(url: string, client: JWT) => {
+  const { data: resource } = await client.request<T>({
     method: 'GET',
     url,
   });
@@ -19,7 +15,7 @@ const getResource = async (url: string, client: JWT) => {
   return resource;
 };
 
-export const verify = async (requestBody: VerifyReceiptRequestBody, config: Config): Promise<VerifyResponse> => {
+export const verify = async (requestBody: RequestBody, config: Config): Promise<VerifyResponse> => {
   // Default to false if undefined
   requestBody.acknowledge = requestBody?.acknowledge ?? false;
 
@@ -32,16 +28,12 @@ export const verify = async (requestBody: VerifyReceiptRequestBody, config: Conf
   const { acknowledge, get } = buildEndpoint(requestBody);
 
   try {
-    const response = await client.request<
-      typeof requestBody['acknowledge'] extends true ? VerifyAcknowledgeReceiptResponse : VerifyGetReceiptResponse
-    >({
+    const response = await client.request<SubscriptionPurchase | ProductPurchase>({
       method: requestBody.acknowledge ? 'POST' : 'GET',
       url: requestBody.acknowledge ? acknowledge : get,
     });
 
-    let data: VerifyAcknowledgeReceiptResponse | VerifyGetReceiptResponse = requestBody.acknowledge
-      ? {}
-      : response.data;
+    let data = requestBody.acknowledge ? ({} as AcknowledgePurchaseOrSubscription) : response.data;
 
     if (requestBody.acknowledge && requestBody.fetchResource) {
       data = await getResource(get, client);
@@ -78,9 +70,7 @@ export const verify = async (requestBody: VerifyReceiptRequestBody, config: Conf
     const message = error instanceof Error ? error.message : 'An error happened.';
     const status = (error as ErrorResponse)?.response?.status ?? 500;
 
-    let data: VerifyAcknowledgeReceiptResponse | VerifyGetReceiptResponse | undefined = requestBody.acknowledge
-      ? {}
-      : undefined;
+    let data = requestBody.acknowledge ? ({} as AcknowledgePurchaseOrSubscription) : undefined;
 
     if (requestBody.acknowledge && requestBody.fetchResource) {
       data = await getResource(get, client);

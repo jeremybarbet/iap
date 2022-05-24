@@ -3,7 +3,7 @@
  * @link https://developer.apple.com/documentation/appstorereceipts
  */
 
-import { errors, ErrorStatus, SuccessStatus } from './apple.utils';
+import { errors } from './apple.utils';
 
 type ValidReceipt = 0;
 
@@ -444,7 +444,10 @@ interface Receipt {
   version_external_identifier: number;
 }
 
-export interface VerifyReceiptResponse {
+/**
+ * @link https://developer.apple.com/documentation/appstorereceipts/responsebody
+ */
+export interface ResponseBody {
   /**
    * The environment for which the receipt was generated.
    */
@@ -480,30 +483,3 @@ export interface VerifyReceiptResponse {
    */
   status: keyof typeof errors | ValidReceipt;
 }
-
-export interface Config {
-  /**
-   * Define the environnement to use to connect to Apple endpoint.
-   * @default Environnement.PRODUCTION
-   */
-  environnement?: Environnement;
-
-  /**
-   * Your app’s shared secret, which is a hexadecimal string. For more information about the shared secret, see [Generate a Receipt Validation Code](@link https://help.apple.com/app-store-connect/#/devf341c0f01).
-   */
-  password: string;
-
-  /**
-   * Set this value to true for the response to include only the latest renewal transaction for any subscriptions. Use this field only for app receipts that contain auto-renewable subscriptions.
-   * @default true
-   */
-  excludeOldTransactions?: boolean;
-}
-
-export interface RequestBody {
-  transactionReceipt: string;
-}
-
-export type DataResponse = VerifyReceiptResponse;
-
-export type StatusResponse = SuccessStatus | ErrorStatus | number;

@@ -4,17 +4,19 @@ import {
   Environnement as AppleEnvironnement,
   RequestBody as AppleRequestBody,
   StatusResponse as AppleStatusResponse,
-  verify as appleVerify,
-  VerifyReceiptResponse as AppleVerifyReceiptResponse,
+  verify as verifyAppleReceipt,
+  VerifyResponse as AppleVerifyResponse,
 } from './src/apple';
 import {
+  AcknowledgePurchaseOrSubscription as GoogleAcknowledgePurchaseOrSubscription,
   Config as GoogleConfig,
   DataResponse as GoogleDataResponse,
-  ProductReceipt as GoogleProductReceipt,
+  ProductPurchase as GoogleProductPurchase,
+  RequestBody as GoogleRequestBody,
   StatusResponse as GoogleStatusResponse,
-  SubscriptionReceipt as GoogleSubscriptionReceipt,
-  verify as googleVerify,
-  VerifyReceiptRequestBody as GoogleVerifyReceiptRequestBody,
+  SubscriptionPurchase as GoogleSubscriptionPurchase,
+  verify as verifyGoogleReceipt,
+  VerifyResponse as GoogleVerifyResponse,
 } from './src/google';
 
 export {
@@ -23,17 +25,15 @@ export {
   AppleEnvironnement,
   type AppleRequestBody,
   type AppleStatusResponse,
-  type AppleVerifyReceiptResponse,
+  verifyAppleReceipt,
+  type AppleVerifyResponse,
+  type GoogleAcknowledgePurchaseOrSubscription,
   type GoogleConfig,
   type GoogleDataResponse,
-  type GoogleProductReceipt,
+  type GoogleProductPurchase,
+  type GoogleRequestBody,
   type GoogleStatusResponse,
-  type GoogleSubscriptionReceipt,
-  type GoogleVerifyReceiptRequestBody,
+  type GoogleSubscriptionPurchase,
+  verifyGoogleReceipt,
+  type GoogleVerifyResponse,
 };
-
-export const verifyAppleReceipt = async (requestBody: AppleRequestBody, config: AppleConfig) =>
-  await appleVerify(requestBody, config);
-
-export const verifyGoogleReceipt = async (requestBody: GoogleVerifyReceiptRequestBody, config: GoogleConfig) =>
-  await googleVerify(requestBody, config);

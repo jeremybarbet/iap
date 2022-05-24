@@ -1,12 +1,16 @@
-import { verifyAppleReceipt, verifyGoogleReceipt } from '../index';
-import { Environnement } from '../src/apple/apple.interface';
-import { VerifyResponse } from '../src/types/common';
+import {
+  AppleEnvironnement,
+  AppleVerifyResponse,
+  GoogleVerifyResponse,
+  verifyAppleReceipt,
+  verifyGoogleReceipt,
+} from '../index';
 
 import { loadDataFile } from './load-data-file';
 
 const { apple, google } = loadDataFile();
 
-const responseLog = (name: string, response: VerifyResponse) => {
+const responseLog = (name: string, response: AppleVerifyResponse | GoogleVerifyResponse) => {
   console.log(name);
   console.log('├ valid: ', response.valid);
   console.log('├ status: ', response.status);
@@ -32,7 +36,7 @@ const appleTests = async () => {
         transactionReceipt: apple.payload.transactionReceipt,
       },
       {
-        environnement: Environnement.SANDBOX,
+        environnement: AppleEnvironnement.SANDBOX,
         password: apple.credentials.password,
       },
     );

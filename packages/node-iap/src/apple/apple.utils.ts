@@ -1,4 +1,4 @@
-import { VerifyReceiptResponse } from './apple.interface';
+import { ResponseBody } from './apple.interface';
 
 export type SuccessStatus = keyof typeof successes;
 export type ErrorStatus = keyof typeof errors;
@@ -25,7 +25,7 @@ export const errors = {
 
 const internalDataAccessErrors = [21100, 21199];
 
-export const handleResponse = (data: VerifyReceiptResponse) => {
+export const handleResponse = (data: ResponseBody) => {
   if (successes?.[data.status as SuccessStatus]) {
     return {
       valid: true,

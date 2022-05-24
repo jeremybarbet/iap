@@ -1,9 +1,3 @@
-export {
-  Config,
-  DataResponse,
-  Environnement,
-  RequestBody,
-  StatusResponse,
-  VerifyReceiptResponse,
-} from './apple.interface';
-export { verify } from './apple';
+export * from './apple.interface';
+export * from './apple-config.interface';
+export * from './apple';

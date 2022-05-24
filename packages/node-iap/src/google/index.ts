@@ -1,9 +1,3 @@
-export {
-  Config,
-  DataResponse,
-  ProductReceipt,
-  StatusResponse,
-  SubscriptionReceipt,
-  VerifyReceiptRequestBody,
-} from './google.interface';
-export { verify } from './google';
+export * from './google.interface';
+export * from './google-config.interface';
+export * from './google';

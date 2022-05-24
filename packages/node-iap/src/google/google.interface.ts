@@ -1,88 +1,7 @@
 /**
- * Interfaces extracted from the Google documentation
- * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.products/get
- * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.products/acknowledge
- * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.subscriptions/get
- * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.subscriptions/acknowledge
+ * Interfaces extracted from the Google API
+ * Would be nice to create a script to pull the data from a google endpoint and automatically update types and descriptions.
  */
-
-export interface Config {
-  /**
-   * Google service account client email.
-   */
-  clientEmail: string;
-
-  /**
-   * Google service account private key.
-   */
-  privateKey: string;
-}
-
-interface BodyWithAcknowledge {
-  /**
-   * To acknowledge a product/subscription purchase.
-   *
-   * @default false
-   */
-  acknowledge?: true;
-
-  /**
-   * The acknowledge endpoint return an empty response.
-   * This boolean forces a get request to return purchase's information.
-   *
-   * @default false
-   */
-  fetchResource?: boolean;
-}
-
-interface BodyWithoutAcknowledge {
-  /**
-   * To acknowledge a product/subscription purchase.
-   *
-   * @default false
-   */
-  acknowledge?: false;
-
-  /**
-   * The acknowledge endpoint return an empty response.
-   * This boolean forces a get request to return purchase's information.
-   *
-   * @default false
-   */
-  fetchResource?: never;
-}
-
-interface BodyBase {
-  /**
-   * The package name of the application for which this subscription was purchased (for example, 'com.some.thing').
-   */
-  packageName: string;
-
-  /**
-   * The token provided to the user's device when the subscription was purchased.
-   */
-  token: string;
-}
-
-type BodyConditional = BodyWithAcknowledge | BodyWithoutAcknowledge;
-
-export type SubscriptionReceipt = BodyBase &
-  BodyConditional & {
-    /**
-     * The purchased subscription ID (for example, 'monthly001').
-     */
-    subscriptionId: string;
-  };
-
-export type ProductReceipt = BodyBase &
-  BodyConditional & {
-    /**
-     * The inapp product SKU (for example, 'com.some.thing.inapp1').
-     */
-    productId: string;
-  };
-
-export type VerifyReceiptRequestBody = SubscriptionReceipt | ProductReceipt;
 
 interface IntroductoryPriceInfo {
   /**
@@ -142,7 +61,85 @@ interface SubscriptionPriceChange {
   state: number;
 }
 
-export interface VerifyGetReceiptResponse {
+/**
+ * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.products/get
+ */
+export interface ProductPurchase {
+  /**
+   * This kind represents an inappPurchase object in the androidpublisher service.
+   */
+  kind: string;
+
+  /**
+   * The time the product was purchased, in milliseconds since the epoch (Jan 1, 1970).
+   */
+  purchaseTimeMillis: string;
+
+  /**
+   * The purchase state of the order. Possible values are: 0. Purchased 1. Canceled 2. Pending
+   */
+  purchaseState: number;
+
+  /**
+   * The consumption state of the inapp product. Possible values are: 0. Yet to be consumed 1. Consumed
+   */
+  consumptionState: number;
+
+  /**
+   * A developer-specified string that contains supplemental information about an order.
+   */
+  developerPayload: string;
+
+  /**
+   * The order id associated with the purchase of the inapp product.
+   */
+  orderId: string;
+
+  /**
+   * The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying)
+   */
+  purchaseType: number;
+
+  /**
+   * The acknowledgement state of the inapp product. Possible values are: 0. Yet to be acknowledged 1. Acknowledged
+   */
+  acknowledgementState: number;
+
+  /**
+   * The purchase token generated to identify this purchase. May not be present.
+   */
+  purchaseToken: string;
+
+  /**
+   * The inapp product SKU. May not be present.
+   */
+  productId: string;
+
+  /**
+   * The quantity associated with the purchase of the inapp product. If not present, the quantity is 1.
+   */
+  quantity: number;
+
+  /**
+   * An obfuscated version of the id that is uniquely associated with the user's account in your app. Only present if specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedaccountid when the purchase was made.
+   */
+  obfuscatedExternalAccountId: string;
+
+  /**
+   * An obfuscated version of the id that is uniquely associated with the user's profile in your app. Only present if specified using https://developer.android.com/reference/com/android/billingclient/api/BillingFlowParams.Builder#setobfuscatedprofileid when the purchase was made.
+   */
+  obfuscatedExternalProfileId: string;
+
+  /**
+   * ISO 3166-1 alpha-2 billing region code of the user at the time the product was granted.
+   */
+  regionCode: string;
+}
+
+/**
+ * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.subscriptions/get
+ */
+export interface SubscriptionPurchase {
   /**
    * This kind represents a subscriptionPurchase object in the androidpublisher service.
    */
@@ -293,8 +290,9 @@ export interface VerifyGetReceiptResponse {
   obfuscatedExternalProfileId: string;
 }
 
-export type VerifyAcknowledgeReceiptResponse = object;
-
-export type DataResponse = VerifyGetReceiptResponse | VerifyAcknowledgeReceiptResponse;
-
-export type StatusResponse = number;
+/**
+ * Interfaces extracted from the Google documentation
+ * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.products/acknowledge
+ * @link https://developers.google.com/android-publisher/api-ref/rest/v3/purchases.subscriptions/acknowledge
+ */
+export type AcknowledgePurchaseOrSubscription = Record<string, never>;
