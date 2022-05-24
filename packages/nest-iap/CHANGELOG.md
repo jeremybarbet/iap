@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.1.1](https://github.com/jeremybarbet/iap/compare/v1.1.0...v1.1.1) (2022-05-24)
+
+### 🚧 Refactoring
+
+- organize and rename types better ([9e40230](https://github.com/jeremybarbet/iap/commit/9e4023073d711a1b6c7991cc108d64e06baa623b))
+
 ## [1.1.0](https://github.com/jeremybarbet/iap/compare/v1.0.6...v1.1.0) (2022-05-23)
 
 **Note:** Version bump only for package @jeremybarbet/nest-iap
