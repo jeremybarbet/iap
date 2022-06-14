@@ -1,7 +1,7 @@
 import {
   Config as AppleConfig,
   DataResponse as AppleDataResponse,
-  Environnement as AppleEnvironnement,
+  Environment as AppleEnvironment,
   RequestBody as AppleRequestBody,
   StatusResponse as AppleStatusResponse,
   verify as verifyAppleReceipt,
@@ -22,7 +22,7 @@ import {
 export {
   type AppleConfig,
   type AppleDataResponse,
-  AppleEnvironnement,
+  AppleEnvironment,
   type AppleRequestBody,
   type AppleStatusResponse,
   verifyAppleReceipt,

@@ -7,7 +7,7 @@ import { errors } from './apple.utils';
 
 type ValidReceipt = 0;
 
-export enum Environnement {
+export enum Environment {
   PRODUCTION = 'Production',
   SANDBOX = 'Sandbox',
 }
@@ -451,7 +451,7 @@ export interface ResponseBody {
   /**
    * The environment for which the receipt was generated.
    */
-  environment: Environnement;
+  environment: Environment;
 
   /**
    * An indicator that an error occurred during the request. A value of 1 indicates a temporary issue; retry validation for this receipt at a later time. A value of 0 indicates an unresolvable issue; do not retry validation for this receipt. Only applicable to status codes 21100-21199.

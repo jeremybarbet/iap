@@ -1,12 +1,12 @@
-import { Environnement, ResponseBody } from './apple.interface';
+import { Environment, ResponseBody } from './apple.interface';
 import { ErrorStatus, SuccessStatus } from './apple.utils';
 
 export interface Config {
   /**
-   * Define the environnement to use to connect to Apple endpoint.
-   * @default Environnement.PRODUCTION
+   * Define the Environment to use to connect to Apple endpoint.
+   * @default Environment.PRODUCTION
    */
-  environnement?: Environnement;
+  environment?: Environment;
 
   /**
    * Your app’s shared secret, which is a hexadecimal string. For more information about the shared secret, see [Generate a Receipt Validation Code](@link https://help.apple.com/app-store-connect/#/devf341c0f01).

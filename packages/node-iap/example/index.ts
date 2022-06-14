@@ -1,5 +1,5 @@
 import {
-  AppleEnvironnement,
+  AppleEnvironment,
   AppleVerifyResponse,
   GoogleVerifyResponse,
   verifyAppleReceipt,
@@ -36,7 +36,7 @@ const appleTests = async () => {
         transactionReceipt: apple.payload.transactionReceipt,
       },
       {
-        environnement: AppleEnvironnement.SANDBOX,
+        environment: AppleEnvironment.SANDBOX,
         password: apple.credentials.password,
       },
     );
