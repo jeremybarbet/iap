@@ -8,8 +8,8 @@ import { errors } from './apple.utils';
 type ValidReceipt = 0;
 
 export enum Environnement {
-  PRODUCTION = 'production',
-  SANDBOX = 'sandbox',
+  PRODUCTION = 'Production',
+  SANDBOX = 'Sandbox',
 }
 
 interface LatestReceiptInfo {
