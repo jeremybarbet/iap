@@ -1,5 +1,12 @@
 # Changelog
 
+### [1.1.2](https://github.com/jeremybarbet/iap/compare/v1.1.1...v1.1.2) (2022-06-14)
+
+### 🐛 Bug fixes
+
+- environnement values ([5739b76](https://github.com/jeremybarbet/iap/commit/5739b76542c239392d2c159196bd724ca4ab52f6))
+- typo on environment ([1f8d426](https://github.com/jeremybarbet/iap/commit/1f8d426b7f6c8d60869021fa7724769ef7c480f2))
+
 ### [1.1.1](https://github.com/jeremybarbet/iap/compare/v1.1.0...v1.1.1) (2022-05-24)
 
 ### 🚧 Refactoring

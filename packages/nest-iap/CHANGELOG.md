@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.1.2](https://github.com/jeremybarbet/iap/compare/v1.1.1...v1.1.2) (2022-06-14)
+
+### 🐛 Bug fixes
+
+- set module as global ([6f244b0](https://github.com/jeremybarbet/iap/commit/6f244b07ef34f9ae084e3ca215129ad2f8291d6a))
+
 ### [1.1.1](https://github.com/jeremybarbet/iap/compare/v1.1.0...v1.1.1) (2022-05-24)
 
 ### 🚧 Refactoring
