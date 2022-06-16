@@ -1,5 +1,1 @@
-export {
-  SubscriptionPurchase,
-  ProductPurchase,
-  AcknowledgePurchaseOrSubscription,
-} from './src/android-publisher.interface';
+export * from './src/android-publisher.interface';
