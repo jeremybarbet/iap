@@ -1,12 +1,20 @@
 # In App Purchase
 
-This library allow you to server-side verify an in-app purchase from an iOS or an Android app. Additionally, with Google Play Billing Library version 3, you have to acknowledge a subscription to be successfully process by the Google Play Store.
+Libraries to server-side verify in-app purchases for iOS and Android. Additionally, with Google Play Billing Library version 3, can acknowledge a subscription to be successfully process by the Google Play Store.
+
+## Features
+
+- 💸 Verify in-app purchases for iOS and Android receipts in Node.js
+- 🔌 [NestJS](https://nestjs.com) wrapper to easily integrates the library in your project.
+- Uses [axios](https://github.com/axios/axios) under the hood for the requests.
+- Typescript definition for App Store Receipts, App Store Server API and Google Play Developer API.
+- All types come with their descriptions extracted from the Apple and Google documentations.
 
 ## Node.js IAP library
 
 This is the core library wrapping the Apple and Google IAP APIs to get and verify in-app purchases.
 
-View the [README.md](./packages/node-iap/README.md) to get started.
+→ [README.md](./packages/node-iap/README.md) for more information.
 
 ### Installation
 
@@ -45,7 +53,7 @@ const { data } = verifyGoogleReceipt(
 
 This is a NestJS wrapper for the Node.js library.
 
-View the [README.md](./packages/nest-iap/README.md) to get started.
+→ [README.md](./packages/nest-iap/README.md) for more information.
 
 ### Installation
 
@@ -95,6 +103,30 @@ class MyService {
     });
   }
 }
+```
+
+## Apple API types
+
+Typescript definitions for Apple API services.
+
+→ [README.md](./packages/apple-api-types/README.md) for more information.
+
+### Installation
+
+```bash
+yarn add @jeremybarbet/apple-api-types
+```
+
+## Google API types
+
+Typescript definitions for Google API services.
+
+→ [README.md](./packages/google-api-types/README.md) for more information.
+
+### Installation
+
+```bash
+yarn add @jeremybarbet/google-api-types
 ```
 
 ## Acknowledgments

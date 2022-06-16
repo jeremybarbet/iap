@@ -1,4 +1,8 @@
-import { AcknowledgePurchaseOrSubscription, ProductPurchase, SubscriptionPurchase } from './google.interface';
+import {
+  AcknowledgePurchaseOrSubscription,
+  ProductPurchase,
+  SubscriptionPurchase,
+} from '@jeremybarbet/google-api-types';
 
 export interface Config {
   /**

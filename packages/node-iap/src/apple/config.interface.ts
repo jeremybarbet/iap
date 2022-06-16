@@ -1,4 +1,5 @@
-import { Environment, ResponseBody } from './apple.interface';
+import { Environment, ResponseBody } from '@jeremybarbet/apple-api-types';
+
 import { ErrorStatus, SuccessStatus } from './apple.utils';
 
 export interface Config {

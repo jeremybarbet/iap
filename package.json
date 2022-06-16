@@ -8,10 +8,10 @@
     "registry": "https://registry.npmjs.org"
   },
   "scripts": {
-    "build": "lerna run --scope @jeremybarbet/node-iap build && lerna run --scope @jeremybarbet/nest-iap build",
+    "build": "lerna run build --parallel",
     "lint": "yarn lint:tsc && yarn lint:eslint && yarn lint:prettier",
     "lint:ci": "yarn lint:eslint -f ./node_modules/@firmnav/eslint-github-actions-formatter/dist/formatter.js && yarn lint:prettier",
-    "lint:tsc": "lerna run --scope @jeremybarbet/nest-iap lint:tsc && lerna run --scope @jeremybarbet/node-iap lint:tsc",
+    "lint:tsc": "lerna run lint:tsc --parallel",
     "lint:eslint": "eslint --fix '**/*.ts'",
     "lint:prettier": "prettier --write \"packages/**/*.{ts,json,md}\"",
     "format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",

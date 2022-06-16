@@ -1,10 +1,14 @@
+import {
+  AcknowledgePurchaseOrSubscription,
+  ProductPurchase,
+  SubscriptionPurchase,
+} from '@jeremybarbet/google-api-types';
 import { JWT } from 'google-auth-library';
 
 import { ErrorResponse } from '../types/common';
 
-import { AcknowledgePurchaseOrSubscription, ProductPurchase, SubscriptionPurchase } from './google.interface';
+import { Config, RequestBody, VerifyResponse } from './config.interface';
 import { buildEndpoint } from './google.utils';
-import { Config, RequestBody, VerifyResponse } from './google-config.interface';
 
 const getResource = async <T = SubscriptionPurchase | ProductPurchase>(url: string, client: JWT) => {
   const { data: resource } = await client.request<T>({

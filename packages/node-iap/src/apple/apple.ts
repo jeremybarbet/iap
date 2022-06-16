@@ -1,11 +1,11 @@
+import { Environment, errors, ResponseBody } from '@jeremybarbet/apple-api-types';
 import axios from 'axios';
 
 import { ErrorResponse } from '../types/common';
 
 import { endpoints } from './apple.constants';
-import { Environment, ResponseBody } from './apple.interface';
-import { errors, ErrorStatus, handleResponse } from './apple.utils';
-import { Config, RequestBody, VerifyResponse } from './apple-config.interface';
+import { ErrorStatus, handleResponse } from './apple.utils';
+import { Config, RequestBody, VerifyResponse } from './config.interface';
 
 export const verify = async ({ transactionReceipt }: RequestBody, config: Config): Promise<VerifyResponse> => {
   const { environment = Environment.PRODUCTION, password, excludeOldTransactions = true } = config;
