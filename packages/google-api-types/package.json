@@ -1,6 +1,6 @@
 {
   "name": "@jeremybarbet/google-api-types",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Typescript definitions for Google API services.",
   "license": "MIT",
   "main": "dist/index.js",
