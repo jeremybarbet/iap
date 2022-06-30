@@ -17,7 +17,7 @@
     "format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
     "postinstall": "patch-package && lerna bootstrap",
     "prepare": "yarn build",
-    "release": "lerna publish"
+    "release": "env $(cat .env | xargs) lerna publish"
   },
   "devDependencies": {
     "@firmnav/eslint-github-actions-formatter": "1.0.1",
@@ -28,7 +28,8 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prefer-arrow": "1.2.3",
     "eslint-plugin-simple-import-sort": "7.0.0",
-    "lerna": "4.0.0",
+    "lerna": "5.1.6",
+    "nx": "14.3.6",
     "patch-package": "6.4.7",
     "prettier": "2.6.2",
     "typescript": "4.6.4"
