@@ -2,6 +2,8 @@
  * @link https://developer.android.com/google/play/billing/rtdn-reference
  */
 
+import { OneTimeProductNotificationType, SubscriptionNotificationType } from './rtdn.enum';
+
 interface OneTimeProductNotification {
   /**
    * The version of this notification. Initially, this will be "1.0". This version is distinct from other version fields.
@@ -13,7 +15,7 @@ interface OneTimeProductNotification {
    * (1) ONE_TIME_PRODUCT_PURCHASED - A one-time product was successfully purchased by a user.
    * (2) ONE_TIME_PRODUCT_CANCELED - A pending one-time product purchase has been canceled by the user.
    */
-  notificationType: number;
+  notificationType: OneTimeProductNotificationType;
 
   /**
    * The token provided to the user’s device when purchase was made.
@@ -48,7 +50,7 @@ interface SubscriptionNotification {
    * (12) SUBSCRIPTION_REVOKED - A subscription has been revoked from the user before the expiration time.
    * (13) SUBSCRIPTION_EXPIRED - A subscription has expired.
    */
-  notificationType: number;
+  notificationType: SubscriptionNotificationType;
 
   /**
    * The token provided to the user's device when the subscription was purchased.
