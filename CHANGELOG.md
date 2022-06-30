@@ -1,5 +1,18 @@
 # Changelog
 
+### [1.3.1](https://github.com/jeremybarbet/iap/compare/v1.3.0...v1.3.1) (2022-06-30)
+
+
+### 🛠️ Misc chores
+
+* upgrade lerna deps ([092f481](https://github.com/jeremybarbet/iap/commit/092f481a5bd0e0c11605cf7b2e40f7575fb3fd80))
+
+
+### 🐛 Bug fixes
+
+* add enums for rtdn notification types ([f4e51f2](https://github.com/jeremybarbet/iap/commit/f4e51f2a2c73ac4eb2f2e0806bf30474720744e8))
+
+
 ## [1.3.0](https://github.com/jeremybarbet/iap/compare/v1.2.1...v1.3.0) (2022-06-30)
 
 ### ✨ Features
