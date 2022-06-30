@@ -15,7 +15,7 @@
     "lint:tsc": "yarn tsc -p tsconfig.json --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@jeremybarbet/apple-api-types": "1.3.0",
+    "@jeremybarbet/apple-api-types": "1.3.2",
     "@jeremybarbet/google-api-types": "1.3.2"
   },
   "devDependencies": {
