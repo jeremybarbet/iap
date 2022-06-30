@@ -57,6 +57,7 @@
       }
     },
     "publish": {
+      "registry": "https://registry.npmjs.org",
       "message": "chore: release %s"
     }
   }

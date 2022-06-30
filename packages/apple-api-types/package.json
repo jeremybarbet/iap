@@ -7,9 +7,6 @@
   "types": "dist/index.d.ts",
   "repository": "git@github.com/jeremybarbet/iap.git",
   "author": "Jérémy Barbet <jeremgraph@gmail.com>",
-  "publishConfig": {
-    "access": "public"
-  },
   "keywords": [
     "iap",
     "payments",
