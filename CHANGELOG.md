@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.0](https://github.com/jeremybarbet/iap/compare/v1.2.1...v1.3.0) (2022-06-30)
+
+### ✨ Features
+
+- add google RTDN ([34b1c04](https://github.com/jeremybarbet/iap/commit/34b1c044c4872c0f3c83bb6973f5b0a2f65f1839))
+
 ### [1.2.1](https://github.com/jeremybarbet/iap/compare/v1.2.0...v1.2.1) (2022-06-16)
 
 ### 🐛 Bug fixes
