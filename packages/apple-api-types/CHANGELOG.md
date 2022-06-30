@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.3.2](https://github.com/jeremybarbet/iap/compare/v1.3.1...v1.3.2) (2022-06-30)
+
+### 🛠️ Misc chores
+
+- add missing release manually ([a356b4f](https://github.com/jeremybarbet/iap/commit/a356b4f90c0ac5a21ba955bd3957fdca42c9fd0c))
+
 ### [1.3.1](https://github.com/jeremybarbet/iap/compare/v1.3.0...v1.3.1) (2022-06-30)
 
 **Note:** Version bump only for package @jeremybarbet/apple-api-types

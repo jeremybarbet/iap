@@ -1,17 +1,25 @@
 # Changelog
 
-### [1.3.1](https://github.com/jeremybarbet/iap/compare/v1.3.0...v1.3.1) (2022-06-30)
-
-
-### 🛠️ Misc chores
-
-* upgrade lerna deps ([092f481](https://github.com/jeremybarbet/iap/commit/092f481a5bd0e0c11605cf7b2e40f7575fb3fd80))
-
+### [1.3.2](https://github.com/jeremybarbet/iap/compare/v1.3.1...v1.3.2) (2022-06-30)
 
 ### 🐛 Bug fixes
 
-* add enums for rtdn notification types ([f4e51f2](https://github.com/jeremybarbet/iap/commit/f4e51f2a2c73ac4eb2f2e0806bf30474720744e8))
+- prettier on readmes ([3d13cda](https://github.com/jeremybarbet/iap/commit/3d13cdafe1a6fd6d947fa6bbb453a6e05b063753))
 
+### 🛠️ Misc chores
+
+- add back prettier to conventional commit dep ([3dd7444](https://github.com/jeremybarbet/iap/commit/3dd7444ed99326bd8c2c973a136426d0e78cb0e0))
+- add missing release manually ([a356b4f](https://github.com/jeremybarbet/iap/commit/a356b4f90c0ac5a21ba955bd3957fdca42c9fd0c))
+
+### [1.3.1](https://github.com/jeremybarbet/iap/compare/v1.3.0...v1.3.1) (2022-06-30)
+
+### 🛠️ Misc chores
+
+- upgrade lerna deps ([092f481](https://github.com/jeremybarbet/iap/commit/092f481a5bd0e0c11605cf7b2e40f7575fb3fd80))
+
+### 🐛 Bug fixes
+
+- add enums for rtdn notification types ([f4e51f2](https://github.com/jeremybarbet/iap/commit/f4e51f2a2c73ac4eb2f2e0806bf30474720744e8))
 
 ## [1.3.0](https://github.com/jeremybarbet/iap/compare/v1.2.1...v1.3.0) (2022-06-30)
 

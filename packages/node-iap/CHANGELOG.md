@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.3.2](https://github.com/jeremybarbet/iap/compare/v1.3.1...v1.3.2) (2022-06-30)
+
+### 🐛 Bug fixes
+
+- prettier on readmes ([3d13cda](https://github.com/jeremybarbet/iap/commit/3d13cdafe1a6fd6d947fa6bbb453a6e05b063753))
+
 ### [1.3.1](https://github.com/jeremybarbet/iap/compare/v1.3.0...v1.3.1) (2022-06-30)
 
 **Note:** Version bump only for package @jeremybarbet/node-iap
