@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.3.3](https://github.com/jeremybarbet/iap/compare/v1.3.2...v1.3.3) (2022-06-30)
+
+### 🛠️ Misc chores
+
+- clean up package.json files ([16e1bd6](https://github.com/jeremybarbet/iap/commit/16e1bd6119ba351319cf6a576e1427853f1b3123))
+
 ### [1.3.2](https://github.com/jeremybarbet/iap/compare/v1.3.1...v1.3.2) (2022-06-30)
 
 ### 🛠️ Misc chores
