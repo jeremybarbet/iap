@@ -1,5 +1,4 @@
 /**
- * Interfaces extracted from the Apple documentation
  * @link https://developer.apple.com/documentation/appstoreserverapi
  */
 

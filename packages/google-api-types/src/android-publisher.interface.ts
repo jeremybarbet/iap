@@ -1,6 +1,4 @@
 /**
- * Interfaces extracted from the Google API
- * Would be nice to create a script to pull the data from a google endpoint and automatically update types and descriptions.
  * @link https://developers.google.com/android-publisher
  */
 

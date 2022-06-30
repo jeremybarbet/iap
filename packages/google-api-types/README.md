@@ -5,6 +5,7 @@ Typescript definitions for Google API services.
 ## Includes
 
 - [Google Play Developer API](https://developers.google.com/android-publisher)
+- [Real-time developer notifications](https://developer.android.com/google/play/billing/rtdn-reference)
 
 ## Installation
 
