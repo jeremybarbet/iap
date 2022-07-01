@@ -6,3 +6,4 @@ dist
 packages/node-iap/example/data.json
 lerna-debug.log
 .env
+.npmrc
