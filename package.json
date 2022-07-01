@@ -14,7 +14,8 @@
     "format": "git ls-files -m | xargs yarn prettier --write --ignore-unknown --no-error-on-unmatched-pattern",
     "postinstall": "patch-package && lerna bootstrap",
     "prepare": "yarn build",
-    "release": "env $(cat .env | xargs) lerna publish"
+    "release": "env $(cat .env | xargs) lerna publish",
+    "release:ci": "lerna publish --yes"
   },
   "devDependencies": {
     "@firmnav/eslint-github-actions-formatter": "1.0.1",
