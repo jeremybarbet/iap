@@ -1,5 +1,11 @@
 # Changelog
 
+### [1.3.4](https://github.com/jeremybarbet/iap/compare/v1.3.3...v1.3.4) (2022-07-01)
+
+### 🛠️ Misc chores
+
+- add back publishConfig ([7fdf6ef](https://github.com/jeremybarbet/iap/commit/7fdf6eff50241f31e5c709bc33d200c299c22d73))
+
 ### [1.3.3](https://github.com/jeremybarbet/iap/compare/v1.3.2...v1.3.3) (2022-06-30)
 
 ### 🛠️ Misc chores

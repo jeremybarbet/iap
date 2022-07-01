@@ -1,5 +1,13 @@
 # Changelog
 
+### [1.3.4](https://github.com/jeremybarbet/iap/compare/v1.3.3...v1.3.4) (2022-07-01)
+
+### 🛠️ Misc chores
+
+- add back publishConfig ([7fdf6ef](https://github.com/jeremybarbet/iap/commit/7fdf6eff50241f31e5c709bc33d200c299c22d73))
+- ignore npmrc file ([15f6ecf](https://github.com/jeremybarbet/iap/commit/15f6ecf75934cabcb935e8d819ac9876d0144fdb))
+- update release CI workflow ([d27cc30](https://github.com/jeremybarbet/iap/commit/d27cc30b467f11e8e19f07744cb979e7f58807b5))
+
 ### [1.3.3](https://github.com/jeremybarbet/iap/compare/v1.3.2...v1.3.3) (2022-06-30)
 
 ### 🐛 Bug fixes
