@@ -7,6 +7,9 @@
   "types": "dist/index.d.ts",
   "repository": "git@github.com:jeremybarbet/iap.git",
   "author": "Jérémy Barbet <jeremgraph@gmail.com>",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "rm -rf dist && tsc",
     "lint:tsc": "yarn tsc -p tsconfig.json --noEmit --skipLibCheck"
