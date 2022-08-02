@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.5](https://github.com/jeremybarbet/iap/compare/v1.3.4...v1.3.5) (2022-08-02)
+
+### 🛠️ Misc chores
+
+- upgrade deps ([2a9a038](https://github.com/jeremybarbet/iap/commit/2a9a038ccaf454e684ff597ced99005874c4e853))
+
 ### [1.3.4](https://github.com/jeremybarbet/iap/compare/v1.3.3...v1.3.4) (2022-07-01)
 
 ### 🛠️ Misc chores

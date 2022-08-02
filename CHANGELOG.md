@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.5](https://github.com/jeremybarbet/iap/compare/v1.3.4...v1.3.5) (2022-08-02)
+
+### 🛠️ Misc chores
+
+- add nx config to cache build task ([14a53e0](https://github.com/jeremybarbet/iap/commit/14a53e059ea67fd06fcffc237a453476ff36125a))
+- tweak release command ([7119bf8](https://github.com/jeremybarbet/iap/commit/7119bf84fddc33621c5ec423f7a11ad93bd03dd8))
+- upgrade deps ([2a9a038](https://github.com/jeremybarbet/iap/commit/2a9a038ccaf454e684ff597ced99005874c4e853))
+
 ### [1.3.4](https://github.com/jeremybarbet/iap/compare/v1.3.3...v1.3.4) (2022-07-01)
 
 ### 🛠️ Misc chores
