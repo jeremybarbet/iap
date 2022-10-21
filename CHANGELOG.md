@@ -1,5 +1,11 @@
 # Changelog
 
+## [1.3.6](https://github.com/jeremybarbet/iap/compare/v1.3.5...v1.3.6) (2022-10-21)
+
+### 🐛 Bug fixes
+
+- wrong endpoints for subscriptions ([085dc1b](https://github.com/jeremybarbet/iap/commit/085dc1b0c832ff6ad6b5da87a9e2b5f5ac459a51))
+
 ## [1.3.5](https://github.com/jeremybarbet/iap/compare/v1.3.4...v1.3.5) (2022-08-02)
 
 ### 🛠️ Misc chores
