@@ -11,11 +11,11 @@ export const buildEndpoint = (requestBody: RequestBody) => {
   if ('subscriptionId' in requestBody) {
     return {
       acknowledge: replaceInUrl(
-        endpoints.products.acknowledge,
+        endpoints.subscriptions.acknowledge,
         ['{subscriptionId}', requestBody.subscriptionId],
         requestBody,
       ),
-      get: replaceInUrl(endpoints.products.get, ['{subscriptionId}', requestBody.subscriptionId], requestBody),
+      get: replaceInUrl(endpoints.subscriptions.get, ['{subscriptionId}', requestBody.subscriptionId], requestBody),
     };
   }
 
