@@ -31,6 +31,11 @@ interface BodyWithAcknowledge {
    * @default false
    */
   fetchResource?: boolean;
+
+  /**
+   * Payload to attach to the purchase.
+   */
+  developerPayload?: string;
 }
 
 interface BodyWithoutAcknowledge {
