@@ -35,6 +35,7 @@ export const verify = async (requestBody: RequestBody, config: Config): Promise<
     const response = await client.request<SubscriptionPurchase | ProductPurchase>({
       method: requestBody.acknowledge ? 'POST' : 'GET',
       url: requestBody.acknowledge ? acknowledge : get,
+      body: requestBody.acknowledge ? { developerPayload: requestBody.developerPayload } : undefined,
     });
 
     let data = requestBody.acknowledge ? ({} as AcknowledgePurchaseOrSubscription) : response.data;
