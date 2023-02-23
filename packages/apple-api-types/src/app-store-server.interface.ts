@@ -9,6 +9,7 @@ import {
   NotificationSubtype,
   NotificationType,
   OfferType,
+  OrderLookupStatus,
   PriceIncreaseStatus,
   SubscriptionStatus,
   Type,
@@ -350,4 +351,19 @@ export interface StatusResponse {
    * Your app’s bundle identifier.
    */
   bundleId: string;
+}
+
+/**
+ * @link https://developer.apple.com/documentation/appstoreserverapi/orderlookupresponse
+ */
+export interface OrderLookupResponse {
+  /**
+   * The status that indicates whether the order ID is valid.
+   */
+  status: OrderLookupStatus;
+
+  /**
+   * An array of in-app purchase transactions that are part of order, signed by Apple, in JSON Web Signature format.
+   */
+  signedTransactions: JWSTransaction[];
 }
