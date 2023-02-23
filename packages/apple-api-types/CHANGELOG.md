@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/jeremybarbet/iap/compare/v1.3.6...v1.4.0) (2023-02-23)
+
+### ✨ Features
+
+- add OrderLookupResponse interface ([f964b39](https://github.com/jeremybarbet/iap/commit/f964b3960b4c0bfdfce9285ac4d894fa9ab3ff4c))
+- update eslint + plugins + rule on types' import/export ([1051d11](https://github.com/jeremybarbet/iap/commit/1051d110a16ee816b2e375fdffbc0d38b5e846ad))
+
 ## [1.3.5](https://github.com/jeremybarbet/iap/compare/v1.3.4...v1.3.5) (2022-08-02)
 
 ### 🛠️ Misc chores
