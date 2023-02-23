@@ -2,7 +2,7 @@
  * @link https://developer.apple.com/documentation/appstorereceipts
  */
 
-import { Environment } from './global.interface';
+import { type Environment } from './global.interface';
 
 type ValidReceipt = 0;
 

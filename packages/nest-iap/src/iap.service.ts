@@ -1,8 +1,8 @@
 import {
-  AppleConfig,
-  AppleRequestBody,
-  GoogleConfig,
-  GoogleRequestBody,
+  type AppleConfig,
+  type AppleRequestBody,
+  type GoogleConfig,
+  type GoogleRequestBody,
   verifyAppleReceipt,
   verifyGoogleReceipt,
 } from '@jeremybarbet/node-iap';

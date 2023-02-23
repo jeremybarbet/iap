@@ -10,11 +10,14 @@
     "prettier"
   ],
   "plugins": ["eslint-plugin-prefer-arrow", "@typescript-eslint", "simple-import-sort"],
+  "ignorePatterns": ["**/dist"],
   "env": {
     "es6": true,
     "jest": true
   },
   "rules": {
+    "@typescript-eslint/consistent-type-exports": ["error", { "fixMixedExportsWithInlineTypeSpecifier": true }],
+    "@typescript-eslint/consistent-type-imports": ["error", { "fixStyle": "inline-type-imports" }],
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-member-access": "off",
     "@typescript-eslint/interface-name-prefix": "off",

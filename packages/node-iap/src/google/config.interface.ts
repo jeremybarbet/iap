@@ -1,7 +1,7 @@
 import {
-  AcknowledgePurchaseOrSubscription,
-  ProductPurchase,
-  SubscriptionPurchase,
+  type AcknowledgePurchaseOrSubscription,
+  type ProductPurchase,
+  type SubscriptionPurchase,
 } from '@jeremybarbet/google-api-types';
 
 export interface Config {

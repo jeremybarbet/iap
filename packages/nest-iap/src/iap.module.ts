@@ -1,6 +1,6 @@
-import { DynamicModule, Module } from '@nestjs/common';
+import { type DynamicModule, Module } from '@nestjs/common';
 
-import { IAP_CONFIG, IAPConfig, IAPService } from './iap.service';
+import { type IAPConfig, IAP_CONFIG, IAPService } from './iap.service';
 
 @Module({})
 export class IAPModule {

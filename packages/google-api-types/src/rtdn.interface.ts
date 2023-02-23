@@ -2,7 +2,7 @@
  * @link https://developer.android.com/google/play/billing/rtdn-reference
  */
 
-import { OneTimeProductNotificationType, SubscriptionNotificationType } from './rtdn.enum';
+import { type OneTimeProductNotificationType, type SubscriptionNotificationType } from './rtdn.enum';
 
 interface OneTimeProductNotification {
   /**

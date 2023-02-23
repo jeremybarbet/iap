@@ -3,18 +3,18 @@
  */
 
 import {
-  AutoRenewStatus,
-  ExpirationIntent,
-  InAppOwnershipType,
-  NotificationSubtype,
-  NotificationType,
-  OfferType,
-  OrderLookupStatus,
-  PriceIncreaseStatus,
-  SubscriptionStatus,
-  Type,
+  type AutoRenewStatus,
+  type ExpirationIntent,
+  type InAppOwnershipType,
+  type NotificationSubtype,
+  type NotificationType,
+  type OfferType,
+  type OrderLookupStatus,
+  type PriceIncreaseStatus,
+  type SubscriptionStatus,
+  type Type,
 } from './app-store-server.enum';
-import { Environment } from './global.interface';
+import { type Environment } from './global.interface';
 
 /**
  * @link https://developer.apple.com/documentation/appstoreserverapi/jwsdecodedheader

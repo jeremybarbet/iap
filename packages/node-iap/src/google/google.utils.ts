@@ -1,4 +1,4 @@
-import { RequestBody } from './config.interface';
+import { type RequestBody } from './config.interface';
 import { endpoints } from './google.constants';
 
 const replaceInUrl = (url: string, extraReplace: [string, string], { packageName, token }: RequestBody) =>

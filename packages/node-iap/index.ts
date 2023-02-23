@@ -1,25 +1,25 @@
 import { Environment as AppleEnvironment } from '@jeremybarbet/apple-api-types';
 import {
-  AcknowledgePurchaseOrSubscription as GoogleAcknowledgePurchaseOrSubscription,
-  ProductPurchase as GoogleProductPurchase,
-  SubscriptionPurchase as GoogleSubscriptionPurchase,
+  type AcknowledgePurchaseOrSubscription as GoogleAcknowledgePurchaseOrSubscription,
+  type ProductPurchase as GoogleProductPurchase,
+  type SubscriptionPurchase as GoogleSubscriptionPurchase,
 } from '@jeremybarbet/google-api-types';
 
 import {
-  Config as AppleConfig,
-  DataResponse as AppleDataResponse,
-  RequestBody as AppleRequestBody,
-  StatusResponse as AppleStatusResponse,
+  type Config as AppleConfig,
+  type DataResponse as AppleDataResponse,
+  type RequestBody as AppleRequestBody,
+  type StatusResponse as AppleStatusResponse,
+  type VerifyResponse as AppleVerifyResponse,
   verify as verifyAppleReceipt,
-  VerifyResponse as AppleVerifyResponse,
 } from './src/apple';
 import {
-  Config as GoogleConfig,
-  DataResponse as GoogleDataResponse,
-  RequestBody as GoogleRequestBody,
-  StatusResponse as GoogleStatusResponse,
+  type Config as GoogleConfig,
+  type DataResponse as GoogleDataResponse,
+  type RequestBody as GoogleRequestBody,
+  type StatusResponse as GoogleStatusResponse,
+  type VerifyResponse as GoogleVerifyResponse,
   verify as verifyGoogleReceipt,
-  VerifyResponse as GoogleVerifyResponse,
 } from './src/google';
 
 export {
