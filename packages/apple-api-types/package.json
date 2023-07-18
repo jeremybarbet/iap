@@ -1,6 +1,6 @@
 {
   "name": "@jeremybarbet/apple-api-types",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Typescript definitions for Apple API services.",
   "license": "MIT",
   "main": "dist/index.js",

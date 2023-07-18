@@ -1,3 +1,17 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+## [1.4.1](https://github.com/jeremybarbet/iap/compare/v1.4.0...v1.4.1) (2023-07-18)
+
+
+### 🚧 Refactoring
+
+* move peerDeps to deps, improve apple errors ([616dbec](https://github.com/jeremybarbet/iap/commit/616dbec2742e6a64370f3c8d27ac9fbb38d9f90e))
+
+
+
 # Changelog
 
 ## [1.4.0](https://github.com/jeremybarbet/iap/compare/v1.3.6...v1.4.0) (2023-02-23)
