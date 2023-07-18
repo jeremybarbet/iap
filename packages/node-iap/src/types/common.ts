@@ -1,5 +1,5 @@
-export interface ErrorResponse {
+export interface ErrorResponse<T = number> {
   response?: {
-    status: number;
+    status: T;
   };
 }

@@ -27,7 +27,7 @@ export interface RequestBody {
 
 export type DataResponse = ResponseBody;
 
-export type StatusResponse = SuccessStatus | ErrorStatus | number;
+export type StatusResponse = SuccessStatus | ErrorStatus;
 
 export interface VerifyResponse {
   valid: boolean;

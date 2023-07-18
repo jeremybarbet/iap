@@ -22,12 +22,13 @@ export const verify = async ({ transactionReceipt }: RequestBody, config: Config
 
     return handleResponse(data);
   } catch (error) {
-    const status = (error as ErrorResponse)?.response?.status ?? 500;
+    const status = (error as ErrorResponse<ErrorStatus>)?.response?.status;
+    const message = status ? errors[status] : 'Unknown error';
 
     return {
       valid: false,
       data: undefined,
-      message: errors?.[status as ErrorStatus],
+      message,
       status,
     };
   }
