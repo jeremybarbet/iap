@@ -3,6 +3,11 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## <small>1.5.1 (2025-05-31)</small>
+
+- chore: run prettier ([fd5cf6c](https://github.com/jeremybarbet/iap/commit/fd5cf6c))
+- chore: update lerna, nx + more devDeps ([c984e15](https://github.com/jeremybarbet/iap/commit/c984e15))
+
 ## [1.5.0](https://github.com/jeremybarbet/iap/compare/v1.4.1...v1.5.0) (2025-05-31)
 
 ### ✨ Features

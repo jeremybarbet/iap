@@ -1,6 +1,6 @@
 {
   "name": "@jeremybarbet/nest-iap",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "Wrapper around iap library to embed in NestJS applications.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,7 +15,7 @@
     "lint:tsc": "yarn tsc -p tsconfig.json --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@jeremybarbet/node-iap": "1.5.0",
+    "@jeremybarbet/node-iap": "1.5.1",
     "@nestjs/common": "11.1.2"
   },
   "devDependencies": {
