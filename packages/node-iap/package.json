@@ -17,12 +17,12 @@
   "dependencies": {
     "@jeremybarbet/apple-api-types": "1.5.0",
     "@jeremybarbet/google-api-types": "1.5.0",
-    "axios": "1.4.0",
-    "google-auth-library": "8.9.0"
+    "axios": "1.9.0",
+    "google-auth-library": "9.15.1"
   },
   "devDependencies": {
-    "@types/node": "20.4.2",
-    "ts-node": "10.9.1",
-    "typescript": "5.1.6"
+    "@types/node": "22.15.29",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3"
   }
 }

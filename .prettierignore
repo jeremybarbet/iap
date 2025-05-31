@@ -1,3 +1,6 @@
 dist
 .github/*.hbs
 yarn.lock
+
+/.nx/cache
+/.nx/workspace-data

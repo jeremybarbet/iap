@@ -1,4 +1,4 @@
-import { type ResponseBody, errors, internalDataAccessErrors, successes } from '@jeremybarbet/apple-api-types';
+import { errors, internalDataAccessErrors, type ResponseBody, successes } from '@jeremybarbet/apple-api-types';
 
 export type SuccessStatus = keyof typeof successes;
 export type ErrorStatus = keyof typeof errors;

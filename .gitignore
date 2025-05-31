@@ -7,3 +7,6 @@ packages/node-iap/example/data.json
 lerna-debug.log
 .env
 .npmrc
+
+.nx/cache
+.nx/workspace-data

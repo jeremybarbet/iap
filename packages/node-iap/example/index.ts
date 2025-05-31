@@ -1,7 +1,7 @@
 import {
+  AppleEnvironment,
   type AppleVerifyResponse,
   type GoogleVerifyResponse,
-  AppleEnvironment,
   verifyAppleReceipt,
   verifyGoogleReceipt,
 } from '../index';

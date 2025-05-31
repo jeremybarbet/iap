@@ -25,7 +25,7 @@
     "lint:tsc": "yarn tsc -p tsconfig.json --noEmit --skipLibCheck"
   },
   "devDependencies": {
-    "@types/node": "20.4.2",
-    "typescript": "5.1.6"
+    "@types/node": "22.15.29",
+    "typescript": "5.8.3"
   }
 }

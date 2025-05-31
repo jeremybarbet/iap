@@ -1,4 +1,4 @@
-import { type DynamicModule, ConfigurableModuleBuilder } from '@nestjs/common';
+import { ConfigurableModuleBuilder, type DynamicModule } from '@nestjs/common';
 
 import { type IAPConfig } from './interfaces/iap-module-config.interface';
 

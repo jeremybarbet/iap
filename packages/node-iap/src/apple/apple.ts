@@ -1,4 +1,4 @@
-import { type ResponseBody, Environment, errors } from '@jeremybarbet/apple-api-types';
+import { Environment, errors, type ResponseBody } from '@jeremybarbet/apple-api-types';
 import axios from 'axios';
 
 import { type ErrorResponse } from '../types/common';

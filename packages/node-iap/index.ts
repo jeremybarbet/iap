@@ -10,16 +10,16 @@ import {
   type DataResponse as AppleDataResponse,
   type RequestBody as AppleRequestBody,
   type StatusResponse as AppleStatusResponse,
-  type VerifyResponse as AppleVerifyResponse,
   verify as verifyAppleReceipt,
+  type VerifyResponse as AppleVerifyResponse,
 } from './src/apple';
 import {
   type Config as GoogleConfig,
   type DataResponse as GoogleDataResponse,
   type RequestBody as GoogleRequestBody,
   type StatusResponse as GoogleStatusResponse,
-  type VerifyResponse as GoogleVerifyResponse,
   verify as verifyGoogleReceipt,
+  type VerifyResponse as GoogleVerifyResponse,
 } from './src/google';
 
 export {
