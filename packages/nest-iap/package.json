@@ -16,12 +16,12 @@
   },
   "dependencies": {
     "@jeremybarbet/node-iap": "1.4.1",
-    "@nestjs/common": "10.1.0"
+    "@nestjs/common": "11.1.2"
   },
   "devDependencies": {
     "@types/node": "20.4.2",
-    "reflect-metadata": "0.1.13",
-    "rxjs": "7.8.1",
+    "reflect-metadata": "0.2.2",
+    "rxjs": "7.8.2",
     "typescript": "5.1.6"
   }
 }
