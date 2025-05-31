@@ -1,3 +1,4 @@
+# misc
 node_modules
 yarn-error.log
 .vscode
@@ -8,5 +9,15 @@ lerna-debug.log
 .env
 .npmrc
 
+# nx
 .nx/cache
 .nx/workspace-data
+
+# yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
