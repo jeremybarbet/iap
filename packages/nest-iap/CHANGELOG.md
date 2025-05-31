@@ -5,13 +5,10 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 ## [1.5.0](https://github.com/jeremybarbet/iap/compare/v1.4.1...v1.5.0) (2025-05-31)
 
-
 ### ✨ Features
 
-* **nest-iap:** update to latest nestjs version ([5d1f22d](https://github.com/jeremybarbet/iap/commit/5d1f22dfb374d43b6cfd7ceabf26ee57c06f69cd))
-* **nest-iap:** use configurable module builder to have forRoot{,Async} methods ([#6](https://github.com/jeremybarbet/iap/issues/6)) ([29f228a](https://github.com/jeremybarbet/iap/commit/29f228ae3d6180e1791531cc0fee5d3098836bef))
-
-
+- **nest-iap:** update to latest nestjs version ([5d1f22d](https://github.com/jeremybarbet/iap/commit/5d1f22dfb374d43b6cfd7ceabf26ee57c06f69cd))
+- **nest-iap:** use configurable module builder to have forRoot{,Async} methods ([#6](https://github.com/jeremybarbet/iap/issues/6)) ([29f228a](https://github.com/jeremybarbet/iap/commit/29f228ae3d6180e1791531cc0fee5d3098836bef))
 
 ## [1.4.1](https://github.com/jeremybarbet/iap/compare/v1.4.0...v1.4.1) (2023-07-18)
 
