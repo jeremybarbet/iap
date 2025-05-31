@@ -136,7 +136,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@jeremybarbet/apple-api-types@npm:1.4.1, @jeremybarbet/apple-api-types@workspace:packages/apple-api-types":
+"@jeremybarbet/apple-api-types@npm:1.5.0, @jeremybarbet/apple-api-types@workspace:packages/apple-api-types":
   version: 0.0.0-use.local
   resolution: "@jeremybarbet/apple-api-types@workspace:packages/apple-api-types"
   dependencies:
@@ -145,7 +145,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jeremybarbet/google-api-types@npm:1.4.1, @jeremybarbet/google-api-types@workspace:packages/google-api-types":
+"@jeremybarbet/google-api-types@npm:1.5.0, @jeremybarbet/google-api-types@workspace:packages/google-api-types":
   version: 0.0.0-use.local
   resolution: "@jeremybarbet/google-api-types@workspace:packages/google-api-types"
   dependencies:
@@ -158,7 +158,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@jeremybarbet/nest-iap@workspace:packages/nest-iap"
   dependencies:
-    "@jeremybarbet/node-iap": "npm:1.4.1"
+    "@jeremybarbet/node-iap": "npm:1.5.0"
     "@nestjs/common": "npm:11.1.2"
     "@types/node": "npm:20.4.2"
     reflect-metadata: "npm:0.2.2"
@@ -167,12 +167,12 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@jeremybarbet/node-iap@npm:1.4.1, @jeremybarbet/node-iap@workspace:packages/node-iap":
+"@jeremybarbet/node-iap@npm:1.5.0, @jeremybarbet/node-iap@workspace:packages/node-iap":
   version: 0.0.0-use.local
   resolution: "@jeremybarbet/node-iap@workspace:packages/node-iap"
   dependencies:
-    "@jeremybarbet/apple-api-types": "npm:1.4.1"
-    "@jeremybarbet/google-api-types": "npm:1.4.1"
+    "@jeremybarbet/apple-api-types": "npm:1.5.0"
+    "@jeremybarbet/google-api-types": "npm:1.5.0"
     "@types/node": "npm:20.4.2"
     axios: "npm:1.4.0"
     google-auth-library: "npm:8.9.0"

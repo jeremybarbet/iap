@@ -1,6 +1,6 @@
 {
   "name": "@jeremybarbet/node-iap",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "description": "Node.js library for Apple and Google IAP.",
   "license": "MIT",
   "main": "dist/index.js",
@@ -15,8 +15,8 @@
     "lint:tsc": "yarn tsc -p tsconfig.json --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@jeremybarbet/apple-api-types": "1.4.1",
-    "@jeremybarbet/google-api-types": "1.4.1",
+    "@jeremybarbet/apple-api-types": "1.5.0",
+    "@jeremybarbet/google-api-types": "1.5.0",
     "axios": "1.4.0",
     "google-auth-library": "8.9.0"
   },

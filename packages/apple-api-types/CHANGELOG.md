@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/jeremybarbet/iap/compare/v1.4.1...v1.5.0) (2025-05-31)
+
+
+### ✨ Features
+
+* **nest-iap:** update to latest nestjs version ([5d1f22d](https://github.com/jeremybarbet/iap/commit/5d1f22dfb374d43b6cfd7ceabf26ee57c06f69cd))
+
+
+
 ## [1.4.1](https://github.com/jeremybarbet/iap/compare/v1.4.0...v1.4.1) (2023-07-18)
 
 ### 🚧 Refactoring

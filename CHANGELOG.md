@@ -3,6 +3,23 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.5.0](https://github.com/jeremybarbet/iap/compare/v1.4.1...v1.5.0) (2025-05-31)
+
+
+### ✨ Features
+
+* **nest-iap:** update to latest nestjs version ([5d1f22d](https://github.com/jeremybarbet/iap/commit/5d1f22dfb374d43b6cfd7ceabf26ee57c06f69cd))
+* **nest-iap:** use configurable module builder to have forRoot{,Async} methods ([#6](https://github.com/jeremybarbet/iap/issues/6)) ([29f228a](https://github.com/jeremybarbet/iap/commit/29f228ae3d6180e1791531cc0fee5d3098836bef))
+
+
+### 🛠️ Misc chores
+
+* move to yarn@4 ([1a977af](https://github.com/jeremybarbet/iap/commit/1a977afd34c76ff951946e435128052b3df9b7ad))
+* remove extra changelog heading ([855c0ba](https://github.com/jeremybarbet/iap/commit/855c0ba428c745f1c660e5d26b8d105f2a993d97))
+* update prettier ([6efefa2](https://github.com/jeremybarbet/iap/commit/6efefa2748a6db131e969d486037e9694aebbba6))
+
+
+
 ## [1.4.1](https://github.com/jeremybarbet/iap/compare/v1.4.0...v1.4.1) (2023-07-18)
 
 
