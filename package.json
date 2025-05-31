@@ -26,7 +26,7 @@
     "eslint-plugin-simple-import-sort": "9.0.0",
     "lerna": "7.1.4",
     "nx": "16.5.2",
-    "prettier": "3.0.0",
+    "prettier": "3.5.3",
     "typescript": "5.1.6"
   }
 }

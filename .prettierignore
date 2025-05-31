@@ -1,2 +1,3 @@
 dist
 .github/*.hbs
+yarn.lock
