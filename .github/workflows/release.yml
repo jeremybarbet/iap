@@ -15,17 +15,18 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
       - name: Configure Node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
+          cache: 'yarn'
+          node-version: '20'
 
       - name: Install dependencies
-        run: yarn
+        run: yarn install --immutable
 
       - name: Set releaser settings
         run: |
